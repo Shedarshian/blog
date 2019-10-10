@@ -6,7 +6,7 @@ tags:
 categories:
   - - live
     - repo
-cover: /images/orix.jpg   #https://i.loli.net/2019/10/10/Z9PIH1Mt357ziso.jpg
+cover: https://i.loli.net/2019/10/10/Z9PIH1Mt357ziso.jpg
 date: 2019-10-10 20:19:02
 ---
 
