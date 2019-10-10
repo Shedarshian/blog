@@ -1,4 +1,4 @@
-avatar: /images/avatar.png # 网站 Logo
+avatar: /images/avatar.jpg #images/avatar.png # 网站 Logo
 background: https://i.loli.net/2019/01/13/5c3aec85a4343.jpg # 既是博客的背景，又是文章默认头图
 favicon:
   href: /favicon.ico # 网站图标
@@ -50,7 +50,7 @@ menu:
   关于博客:
     - /about.html
     - icon-info-circle
-  我的朋友: 
+  我的朋友:
     - /PY.html
 
 widgets:
