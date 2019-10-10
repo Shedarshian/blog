@@ -1,0 +1,3 @@
+[submodule "themes/nexmoe"]
+	path = themes/nexmoe
+	url = https://github.com/nexmoe/hexo-theme-nexmoe.git
