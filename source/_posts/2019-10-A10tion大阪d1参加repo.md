@@ -1,12 +1,13 @@
 ---
 title: A10tion大阪d1参加repo
+urlname: A10tion-repo
 tags:
   - スフィア
   - live
 categories:
   - - live
     - repo
-cover: https://i.loli.net/2019/10/10/Z9PIH1Mt357ziso.jpg
+cover: https://shedarshian.github.io/blog/live/repo/A10tion-repo/orix.jpg #https://i.loli.net/2019/10/10/Z9PIH1Mt357ziso.jpg
 date: 2019-10-10 20:19:02
 ---
 
@@ -17,7 +18,7 @@ date: 2019-10-10 20:19:02
 
 {% asset_img pos.jpg 我的位置 %}
 
-我的位置是在这个地方，还挺靠前的，是现充了一个300en会员抽的（笑）首先是![setlist]{https://ranking.zonosite.com/2019/09/06/post-3253/}
+我的位置是在这个地方，还挺靠前的，是现充了一个300en会员抽的（笑）首先是[setlist](https://ranking.zonosite.com/2019/09/06/post-3253/)
 
 {% asset_img setlist.png セトリ %}
 
@@ -71,4 +72,4 @@ roll歌环节居然还roll到了紫色的，昨天就说要是一直是紫色的
 
 roll之前她们说roll到蓝色就唱USA，，然后台下就USA USA，笑死
 
-这两天的live结束之后我的日本旅游就到此为止了，这次是我第二次来日本玩，主要去巡礼了《夏色奇迹》的地方，在下田、东京以及八丈岛，还有参加了ASLday1和day2，与poppin party的一场fan meeting（结果HTT来了ASLday3，血亏）。总之还是很开心！
+这两天的live结束之后我的日本旅游就到此为止了，这次是我第二次来日本玩，主要去巡礼了《夏色奇迹》的地方，在下田、东京以及八丈岛，因为京阿尼和HTT的事情又去了一次丰乡，还有参加了ASLday1和day2，与poppin party的一场fan meeting（结果HTT来了ASLday3，血亏）。总之还是很开心！

@@ -1,7 +1,7 @@
 ---
 title: 关于
+urlname: about
 date: 2019-10-10 16:03:43
-permalink: about.html
 ---
 
 
