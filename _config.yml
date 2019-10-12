@@ -73,6 +73,12 @@ pagination_dir: page
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
+plugins:
+ - hexo-math
+ - hexo-spoiler # {% spoiler [text] %}
+ - hexo-tag-bilibili # {% bilibili [av_id] [page] %}
+ - hexo-tag-qrcode # {% qrcode data [alt:text] [title:text] [class] %}
+ - hexo-tag-hint # {% hint 'body_text' 'hint_text' %}
 ## Themes: https://hexo.io/themes/
 theme: nexmoe
 

@@ -25,6 +25,13 @@
     "hexo-renderer-kramed": "^0.1.4",
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-server": "^0.3.3",
-    "hexo-wordcount": "^6.0.1"
+    "hexo-spoiler": "^1.5.2",
+    "hexo-tag-bilibili": "^0.2.1",
+    "hexo-tag-hint": "^0.2.2",
+    "hexo-tag-qrcode": "^1.0.0",
+    "hexo-wordcount": "^6.0.1",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-flip-move": "^3.0.3"
   }
 }
