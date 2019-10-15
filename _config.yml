@@ -75,10 +75,13 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 # plugins:
 #  - hexo-math
-#  - hexo-spoiler # {% spoiler [text] %}
+#  - hexo-spoiler # {% spoiler_inline [text] %}
+#  - hexo-sliding-spoiler # {% spoiler "title" %} {% endspoiler %}
 #  - hexo-tag-bilibili # {% bilibili [av_id] [page] %}
 #  - hexo-tag-qrcode # {% qrcode data [alt:text] [title:text] [class] %}
 #  - hexo-tag-hint # {% hint 'body_text' 'hint_text' %}
+#  - hexo-toc # <!-- toc -->
+#  https://github.com/markdown-it/markdown-it
 ## Themes: https://hexo.io/themes/
 theme: nexmoe
 
@@ -100,3 +103,19 @@ math:
     js: custom_js_source # not used
     config:
       # KaTeX config
+
+toc:
+  maxdepth: 3
+  class: toc
+  slugify: transliteration
+  decodeEntities: false
+  anchor:
+    position: after
+    symbol: '#'
+    style: header-anchor
+
+markdown:
+  plugins:
+    - markdown-it-footnote
+    - markdown-it-sub
+    - markdown-it-sup
