@@ -1,8 +1,10 @@
 ---
-title: link
+title: 常用链接
 date: 2019-10-15 20:20:42
 urlname: link
 ---
+
+<br>
 
 <!-- toc -->
 
@@ -51,6 +53,8 @@ Latex宏包我直接放ctan的链接了，里面点`Package documentation`直接
 + [circ](https://ctan.org/pkg/circ) 电路图
 + [musictex](https://ctan.org/pkg/musictex) 五线谱（没人会用latex画五线谱吧。。。）
 
+<br>
+
 + [LatexTools](https://latextools.readthedocs.io/en/latest/) Sublime text的latex plugin
 
 ### C++库
@@ -82,7 +86,7 @@ Latex宏包我直接放ctan的链接了，里面点`Package documentation`直接
 + 英文论坛的[LNN/LNNN总结帖](http://eientei.boards.net/thread/527/touhou-lnn-lnnn-thread)
 + 不可思议的幻想乡TODR的攻略wiki [TODRwiki](http://fusigentod.dojin.com/todr/index.php)※
 + 幻想乡之谜的攻略wiki [gnazo](https://w.atwiki.jp/gnazo/)
-
+\
 + [判定解析帖！](https://tieba.baidu.com/p/4710467563)
 + [对应的THBWiki链接！](https://thwiki.cc/-/19me)
 + [火力数据](https://thwiki.cc/-/rmn)

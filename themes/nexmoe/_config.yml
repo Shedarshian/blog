@@ -10,7 +10,7 @@ function: # 功能开关，可选值（true,false）
   pjax: false # Pjax 无刷新加载页面，暂时存在较大问题
   
 # 附加图标库 用于自定义字体 www.iconfont.cn 登录->创建项目->添加图标->获取链接
-iconlib: # //at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css
+iconlib: //at.alicdn.com/t/font_1460233_cqpdeugxv8i.css # //at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css
 
 cdn: # 这里可以修改站点使用的库的CDN
   mdui:
@@ -52,8 +52,10 @@ menu:
     - icon-info-circle
   我的朋友:
     - /uncategorized/friends.html
-  链接:
+    - icon-friend
+  常用链接:
     - /uncategorized/link.html
+    - icon-link
 
 widgets:
 - social
@@ -80,6 +82,15 @@ social:
     - icon-weibo
     - rgb(255, 0, 0)
     - rgba(255, 0, 0, .15)
+  THBWiki:
+    - https://thwiki.cc/-/16uo
+    - icon-hexagram
+    - rgb(233, 96, 0)
+    - rgb(233, 96, 0, .15)
+  Eventernote:
+    - https://www.eventernote.com/users/shedarshian
+    - rgb(0, 0, 239)
+    - rgb(0, 0, 239, .15)
 
 site_verification: # 向搜索引擎验证你对站点的所有权，用于向搜索引擎提交 sitemap 和管理站点被搜索引擎收录的情况。
   google:
