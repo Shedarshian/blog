@@ -1,6 +1,6 @@
 ---
 title: {{ title }}
-urlname: {{ title }}
+urlname: {{ urlname }}
 date: {{ date }}
 categories:
 tags:

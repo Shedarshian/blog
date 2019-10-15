@@ -95,14 +95,23 @@ deploy:
 math:
   engine: 'mathjax' # or 'katex'
   mathjax:
-    src: custom_mathjax_source
+    src: https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js
     config:
       # MathJax config
-  katex:
-    css: custom_css_source
-    js: custom_js_source # not used
-    config:
-      # KaTeX config
+      tex2jax:
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ]
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        processEscapes: true
+      TeX:
+        equationNumbers:
+          autoNumber: "AMS"
+      extensions: ["tex2jax.js", "AMSmath.js", "AMSsymbols.js"]
+      jax: ["input/TeX", "output/HTML-CSS"]
+  # katex:
+  #   css: custom_css_source
+  #   js: custom_js_source # not used
+  #   config:
+  #     # KaTeX config
 
 toc:
   maxdepth: 3
@@ -110,11 +119,15 @@ toc:
   slugify: transliteration
   decodeEntities: false
   anchor:
-    position: after
+    position: before
     symbol: '#'
     style: header-anchor
 
 markdown:
+  render:
+    html: true
+    breaks: true
+    typographer: false
   plugins:
     - markdown-it-footnote
     - markdown-it-sub
