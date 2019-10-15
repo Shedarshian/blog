@@ -51,7 +51,9 @@ menu:
     - /uncategorized/about.html
     - icon-info-circle
   我的朋友:
-    - /uncategorized/PY.html
+    - /uncategorized/friends.html
+  链接:
+    - /uncategorized/link.html
 
 widgets:
 - social
