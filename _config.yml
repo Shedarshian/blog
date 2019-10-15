@@ -105,7 +105,9 @@ math:
       TeX:
         equationNumbers:
           autoNumber: "AMS"
-      extensions: ["tex2jax.js", "AMSmath.js", "AMSsymbols.js"]
+        Macros:
+          bm: ["\\boldsymbol{#1}", 1]
+      extensions: ["tex2jax.js", "AMSmath.js", "AMSsymbols.js", "https://cdn.mathjax.org/mathjax/contrib/physics/physics.js"]
       jax: ["input/TeX", "output/HTML-CSS"]
   # katex:
   #   css: custom_css_source
