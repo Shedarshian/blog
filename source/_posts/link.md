@@ -28,6 +28,7 @@ urlname: link
 + 三角形中心的百科全书 [ETC](https://faculty.evansville.edu/ck6/encyclopedia/ETC.html)
 + 群性质维基 [Groupprops](https://groupprops.subwiki.org/wiki/Main_Page)
 + 冷门程序语言维基 [esolang](https://esolangs.org/wiki/Main_Page)
++ 可以使用通配符的在线词典 [word detector](http://worddetector.com/)
 + 实验粒子物理的Review文章PDG的交互性网页，实际上是粒子性质总结 [pdglive](http://pdglive.lbl.gov/Viewer.action)
 <!-- more -->
 
@@ -52,7 +53,6 @@ Latex宏包我直接放ctan的链接了，里面点`Package documentation`直接
 + [chemfig](https://ctan.org/pkg/chemfig) 有机化学式
 + [circ](https://ctan.org/pkg/circ) 电路图
 + [musictex](https://ctan.org/pkg/musictex) 五线谱（没人会用latex画五线谱吧。。。）
-
 <br>
 
 + [LatexTools](https://latextools.readthedocs.io/en/latest/) Sublime text的latex plugin
@@ -78,15 +78,16 @@ Latex宏包我直接放ctan的链接了，里面点`Package documentation`直接
 
 ### 东方
 
-+ 友链，中文东方wiki [THBWiki](https://thwiki.cc)
-+ 友链，七份草莓圣代的论坛 [甜品站](https://isndes.com)
++ 友链 <font size=5>**中文东方wiki [THBWiki](https://thwiki.cc)**</font>
++ 友链 <font size=5>**七份草莓圣代的论坛 [甜品站](https://isndes.com)**</font>
 + 著名的打分榜同时也是上传保存rep记录的网站 [royalflare](http://score.royalflare.net/)
 + 原作STG的攻略之一 [東方Project攻略Wiki](https://wikiwiki.jp/thk/)
 + 原作STG的攻略之二（已停止更新） [東方Projectスコアアタックまとめwiki](https://w.atwiki.jp/touhouscorer)
 + 英文论坛的[LNN/LNNN总结帖](http://eientei.boards.net/thread/527/touhou-lnn-lnnn-thread)
 + 不可思议的幻想乡TODR的攻略wiki [TODRwiki](http://fusigentod.dojin.com/todr/index.php)※
 + 幻想乡之谜的攻略wiki [gnazo](https://w.atwiki.jp/gnazo/)
-\
+<br>
+
 + [判定解析帖！](https://tieba.baidu.com/p/4710467563)
 + [对应的THBWiki链接！](https://thwiki.cc/-/19me)
 + [火力数据](https://thwiki.cc/-/rmn)
@@ -105,7 +106,7 @@ Latex宏包我直接放ctan的链接了，里面点`Package documentation`直接
 
 ### LL, Bangdream, imas
 
-+ 友链 [Kamui的歌词工房](TrinityField.github.io)
++ 友链 <font size=5>**[Kamui的歌词工房](https://TrinityField.github.io)**</font>
 + LL的[call表](http://seesaawiki.jp/lovelive_call/)
 + LLSS的[call表](https://seesaawiki.jp/lovelive_sunshine_call/)
 + 邦邦的[call表](https://seesaawiki.jp/bang_dream_call/)
@@ -113,6 +114,14 @@ Latex宏包我直接放ctan的链接了，里面点`Package documentation`直接
 + [bandori database](https://bandori.ga/)
 + [ガルパ攻略](https://appmedia.jp/bang_dream)
 + 邦邦的[英文wiki](https://bandori.fandom.com/wiki/BanG_Dream!_Wikia)
+
+### 其他ACG
+
++ [Elsanna档案室](http://www.cp4ever.com/)
+
+### 社群
+
++ 友链 <font size=5>**[北航飞梦ACG联盟](http://buaaacg.org/)**</font>
 
 ### 其他资源检索的网站
 
@@ -153,3 +162,5 @@ PVZ的帖子都在贴吧，随着贴吧屏蔽2017年以前的帖子而消失了�
 + TPT，一个像素物理沙盒小游戏 [The Powder Toy](https://powdertoy.co.uk/)
 + 无限工厂的[世界纪录](https://www.reddit.com/r/infinifactory/comments/4p606q/leaderboard_lowest_cyclesfootprintblocks/) ※
 
+
+友链持续募集中（？）

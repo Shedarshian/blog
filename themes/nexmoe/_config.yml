@@ -50,9 +50,6 @@ menu:
   关于博客:
     - /uncategorized/about.html
     - icon-info-circle
-  我的朋友:
-    - /uncategorized/friends.html
-    - icon-friend
   常用链接:
     - /uncategorized/link.html
     - icon-link
@@ -87,8 +84,14 @@ social:
     - icon-hexagram
     - rgb(233, 96, 0)
     - rgb(233, 96, 0, .15)
+  Steam:
+    - https://steamcommunity.com/id/shedarshian/
+    - icon-steam
+    - rgb(39, 39, 39)
+    - rgb(39, 39, 39, .15)
   Eventernote:
     - https://www.eventernote.com/users/shedarshian
+    - icon-calender
     - rgb(0, 0, 239)
     - rgb(0, 0, 239, .15)
 

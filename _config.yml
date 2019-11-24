@@ -104,7 +104,7 @@ math:
         processEscapes: true
       TeX:
         equationNumbers:
-          autoNumber: "AMS"
+          autoNumber: "all"
         Macros:
           bm: ["\\boldsymbol{#1}", 1]
       extensions: ["tex2jax.js", "AMSmath.js", "AMSsymbols.js", "https://cdn.mathjax.org/mathjax/contrib/physics/physics.js"]
