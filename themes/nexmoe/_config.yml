@@ -115,7 +115,7 @@ gitalk:
   owner: shedarshian # 持有该 repo 的 GitHub username
   repo: blog # 存放评论的 issue 所在的 repo
   clientID: 96ff8c7d8066a1ebd0fd # GitHub Client ID
-  clientSecret: 0f5d4393b2cd4cd37a72a5a75b459386cdbc25d5 # GitHub Client Secret
+  clientSecret: 42396013123437122b3d1b84a9bb686495452e5d # GitHub Client Secret
 
 gitment:
   owner: nexmoe # 持有该 repo 的 GitHub username
