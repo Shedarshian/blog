@@ -27,7 +27,7 @@
     "hexo-renderer-markdown-it": "^3.4.1",
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-server": "^0.3.3",
-    "hexo-sliding-spoiler": "^1.1.6",
+    "hexo-sliding-spoiler": "^1.2.1",
     "hexo-spoiler": "^1.5.2",
     "hexo-tag-bilibili": "^0.2.1",
     "hexo-tag-hint": "^0.2.2",
