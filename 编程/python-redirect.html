@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html lang="zh">
+
+<head>
+  
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><title>python中重定向外部C模组的标准输出 - 石尾台聖の記憶空間</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="石尾台圣的记忆空间">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="编程中遇到的一个问题。在python里重定向所有的如print等的结果并不困难，只需要给sys.stdout赋值一个文件对象即可（实际上在python3.4及以后，contextlib里就有一个redirect_stdout的函数可以直接运行）。 （翻译自https:&#x2F;&#x2F;eli.thegreenplace.net&#x2F;2015&#x2F;redirecting-all-kinds-of-stdout-in-py">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python中重定向外部C模组的标准输出">
+<meta property="og:url" content="https://shedarshian.github.io/blog/%E7%BC%96%E7%A8%8B/python-redirect.html">
+<meta property="og:site_name" content="石尾台聖の記憶空間">
+<meta property="og:description" content="编程中遇到的一个问题。在python里重定向所有的如print等的结果并不困难，只需要给sys.stdout赋值一个文件对象即可（实际上在python3.4及以后，contextlib里就有一个redirect_stdout的函数可以直接运行）。 （翻译自https:&#x2F;&#x2F;eli.thegreenplace.net&#x2F;2015&#x2F;redirecting-all-kinds-of-stdout-in-py">
+<meta property="og:locale">
+<meta property="og:image" content="https://shedarshian.github.io/blog/%E7%BC%96%E7%A8%8B/python-redirect/fd-inode-diagram.png">
+<meta property="article:published_time" content="2020-02-20T12:20:44.000Z">
+<meta property="article:modified_time" content="2020-04-23T04:27:49.387Z">
+<meta property="article:author" content="小大圣">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://shedarshian.github.io/blog/%E7%BC%96%E7%A8%8B/python-redirect/fd-inode-diagram.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
+  
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1460233_cqpdeugxv8i.css">
+  
+  <!--<link rel="stylesheet" href="/blog/css/style.css?v=1624190832625">-->
+
+  
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/blog/" title="小大圣" class="mdui-btn mdui-btn-icon"><img src="https://shedarshian.github.io/blog/images/avatar.jpg" alt="小大圣"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/blog/" title="小大圣">
+            <img src="https://shedarshian.github.io/blog/images/avatar.jpg" alt="小大圣" alt="小大圣">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>Articles</span>15</div>
+        <div><span>Tags</span>19</div>
+        <div><span>Categories</span>12</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/blog/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/blog/uncategorized/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/blog/uncategorized/link.html" title="常用链接">
+            <i class="mdui-list-item-icon nexmoefont icon-link"></i>
+            <div class="mdui-list-item-content">
+                常用链接
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://cn.bing.com/search?q=site:shedarshian.github.io/blog/" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="Search"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Social</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://space.bilibili.com/4412417" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/shedarshian/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a><a class="mdui-ripple" href="https://weibo.com/u/3934220614" target="_blank" mdui-tooltip="{content: '新浪微博'}" style="color: rgb(255, 0, 0);background-color: rgba(255, 0, 0, .15);">
+            <i class="nexmoefont icon-weibo"></i>
+        </a><a class="mdui-ripple" href="https://thwiki.cc/-/16uo" target="_blank" mdui-tooltip="{content: 'THBWiki'}" style="color: rgb(233, 96, 0);background-color: rgb(233, 96, 0, .15);">
+            <i class="nexmoefont icon-hexagram"></i>
+        </a><a class="mdui-ripple" href="https://steamcommunity.com/id/shedarshian/" target="_blank" mdui-tooltip="{content: 'Steam'}" style="color: rgb(39, 39, 39);background-color: rgb(39, 39, 39, .15);">
+            <i class="nexmoefont icon-steam"></i>
+        </a><a class="mdui-ripple" href="https://www.eventernote.com/users/shedarshian" target="_blank" mdui-tooltip="{content: 'Eventernote'}" style="color: rgb(0, 0, 239);background-color: rgb(0, 0, 239, .15);">
+            <i class="nexmoefont icon-calender"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Categories</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/live/">live</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/live/repo/">repo</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/数学/初等数学/">初等数学</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/随笔/动画/">动画</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/物理/学习笔记/">学习笔记</a>
+          <span class="category-list-count">4</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/数学/">数学</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/游戏/">游戏</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/物理/">物理</a>
+          <span class="category-list-count">5</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/物理/科幻/">科幻</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/编程/">编程</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/随笔/">随笔</a>
+          <span class="category-list-count">3</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Tagcloud</h3>
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/blog/tags/Frozen/" style="font-size: 10px;">Frozen</a> <a href="/blog/tags/HyperRogue/" style="font-size: 10px;">HyperRogue</a> <a href="/blog/tags/live/" style="font-size: 12.5px;">live</a> <a href="/blog/tags/python/" style="font-size: 10px;">python</a> <a href="/blog/tags/%E3%82%B9%E3%83%95%E3%82%A3%E3%82%A2/" style="font-size: 15px;">スフィア</a> <a href="/blog/tags/%E4%B8%B0%E5%B4%8E%E7%88%B1%E7%94%9F/" style="font-size: 10px;">丰崎爱生</a> <a href="/blog/tags/%E5%8A%A8%E7%94%BB/" style="font-size: 10px;">动画</a> <a href="/blog/tags/%E5%AF%BF%E7%BE%8E%E8%8F%9C%E5%AD%90/" style="font-size: 10px;">寿美菜子</a> <a href="/blog/tags/%E5%B0%BA%E8%A7%84%E4%BD%9C%E5%9B%BE/" style="font-size: 10px;">尺规作图</a> <a href="/blog/tags/%E5%B8%8C%E6%A0%BC%E6%96%AF%E6%9C%BA%E5%88%B6/" style="font-size: 10px;">希格斯机制</a> <a href="/blog/tags/%E5%B9%B3%E9%9D%A2%E5%87%A0%E4%BD%95/" style="font-size: 10px;">平面几何</a> <a href="/blog/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 10px;">数学</a> <a href="/blog/tags/%E7%89%A9%E7%90%86/" style="font-size: 20px;">物理</a> <a href="/blog/tags/%E7%A7%91%E5%B9%BB/" style="font-size: 10px;">科幻</a> <a href="/blog/tags/%E7%A7%91%E6%99%AE/" style="font-size: 10px;">科普</a> <a href="/blog/tags/%E8%A7%84%E8%8C%83%E5%9C%BA%E8%AE%BA/" style="font-size: 17.5px;">规范场论</a> <a href="/blog/tags/%E9%9D%9E%E6%AC%A7%E5%87%A0%E4%BD%95/" style="font-size: 10px;">非欧几何</a> <a href="/blog/tags/%E9%9D%9E%E9%98%BF%E8%B4%9D%E5%B0%94%E8%A7%84%E8%8C%83%E5%9C%BA%E8%AE%BA/" style="font-size: 15px;">非阿贝尔规范场论</a> <a href="/blog/tags/%E9%AD%94%E6%B3%95%E7%A6%81%E4%B9%A6%E7%9B%AE%E5%BD%95/" style="font-size: 10px;">魔法禁书目录</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Archive</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/10/">October 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2021 小大圣
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: NaN%;"> 
+          <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="python中重定向外部C模组的标准输出" class="lazyload">
+          <h1>python中重定向外部C模组的标准输出</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月20日</a>
+    <a><i class="nexmoefont icon-areachart"></i>1.1k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 5 分钟</a>
+</div>
+
+  <div class="nexmoe-post-right">
+    
+  </div>
+
+  <article>
+    <link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.2.1/css/hint.min.css"><p>编程中遇到的一个问题。在python里重定向所有的如<code>print</code>等的结果并不困难，只需要给<code>sys.stdout</code>赋值一个文件对象即可（实际上在python3.4及以后，<code>contextlib</code>里就有一个<code>redirect_stdout</code>的函数可以直接运行）。</p>
+<p>（翻译自<a target="_blank" rel="noopener" href="https://eli.thegreenplace.net/2015/redirecting-all-kinds-of-stdout-in-python/">https://eli.thegreenplace.net/2015/redirecting-all-kinds-of-stdout-in-python/</a>）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> contextlib <span class="keyword">import</span> contextmanager</span><br><span class="line"></span><br><span class="line"><span class="meta">@contextmanager</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">redirect_stdout</span>(<span class="params">stream</span>):</span></span><br><span class="line">    old_stdout = sys.stdout</span><br><span class="line">    sys.stdout = stream</span><br><span class="line">    <span class="keyword">try</span>：</span><br><span class="line">        <span class="keyword">yield</span></span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        sys.stdout = old_stdout</span><br><span class="line"></span><br><span class="line">f = io.StringIO()</span><br><span class="line"><span class="keyword">with</span> redirect_stdout(f):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;foobar&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="number">12</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Got stdout: &quot;&#123;0&#125;&quot;&#x27;</span>.<span class="built_in">format</span>(f.getvalue()))</span><br></pre></td></tr></table></figure>
+<p>但是，如果某个module里有在C里直接<code>printf</code>或是<code>cout</code>字符串，上面的就不管用了。比如例子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ctypes</span><br><span class="line">libc = ctypes.CDLL(<span class="literal">None</span>)</span><br><span class="line"></span><br><span class="line">f = io.StringIO()</span><br><span class="line"><span class="keyword">with</span> stdout_redirector(f):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;foobar&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="number">12</span>)</span><br><span class="line">    libc.puts(<span class="string">b&#x27;this comes from C&#x27;</span>)</span><br><span class="line">    os.system(<span class="string">&#x27;echo and this is from echo&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Got stdout: &quot;&#123;0&#125;&quot;&#x27;</span>.<span class="built_in">format</span>(f.getvalue()))</span><br></pre></td></tr></table></figure>
+<p>使用<code>ctypes</code>模拟C中的<code>puts</code>函数，这和在Python中调用C的函数输出到<code>stdout</code>的结果是一样的。另一个测试是使用<code>os.system</code>创建一个子进程同样输出至<code>stdout</code>。而这的运行结果是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">this comes from C</span><br><span class="line">and this is from echo</span><br><span class="line">Got stdout: &quot;foobar</span><br><span class="line">12</span><br><span class="line">&quot;</span><br></pre></td></tr></table></figure>
+<p><code>print</code>的结果相同，而<code>puts</code>和<code>echo</code>则直接跳过了重定向被输出到了屏幕上。这是为什么呢？</p>
+<span id="more"></span>
+<h2><a href="#wen-jian-miao-shu-fu-file-descriptor-yu-liu" class="header-anchor">#</a><span id="wen-jian-miao-shu-fu-file-descriptor-yu-liu">文件描述符（File Descriptor）与流</span></h2>
+<p>解决方案在下一部分，这一部分则是介绍一些原理。</p>
+<img src="/blog/%E7%BC%96%E7%A8%8B/python-redirect/fd-inode-diagram.png" class>
+<p>像图中一样，文件是由操作系统维护的列表，其中可能有不同的指针指向相同的硬盘数据（比如两个不同的进程访问同一个文件）。而文件描述符则是另一层抽象，是由进程管理。每一个进程有其文件描述符指向系统公用的表格。</p>
+<p>文件描述符允许不同进程指向同一文件，同时也对重定向一者至另一者很有用。比如说我们让文件描述符5是文件描述符4的复制，则对5的写入就会和对4的产生相同效果。Unix上的标准输出通常是另一个文件描述符（一般是1）。C库里的流，就是对文件描述符的抽象。通过如<code>fprintf</code>，<code>fgets</code>等的函数操作于其上。</p>
+<p>而python呢？python使用的对文件描述符的抽象则是文件对象（file object）。但是重点是，python，和其加载的C扩展，<strong>使用的是同一个文件描述符</strong>。由于python对其的抽象是<code>sys.stdout</code>，C扩展的抽象是C自己的文件对象<code>FILE</code>，所以仅仅覆盖<code>sys.stdout</code>无法对C扩展的标准输出进行重定向。我们需要触及到其底层的文件描述符。</p>
+<h2><a href="#chong-ding-xiang-c-kuo-zhan-de-biao-zhun-shu-chu" class="header-anchor">#</a><span id="chong-ding-xiang-c-kuo-zhan-de-biao-zhun-shu-chu">重定向C扩展的标准输出</span></h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> contextlib <span class="keyword">import</span> contextmanager</span><br><span class="line"><span class="keyword">import</span> ctypes</span><br><span class="line"><span class="keyword">import</span> io</span><br><span class="line"><span class="keyword">import</span> os, sys</span><br><span class="line"><span class="keyword">import</span> tempfile</span><br><span class="line"></span><br><span class="line">libc = ctypes.CDLL(<span class="literal">None</span>)</span><br><span class="line">c_stdout = ctypes.c_void_p.in_dll(libc, <span class="string">&#x27;stdout&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@contextmanager</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">stdout_redirector</span>(<span class="params">stream</span>):</span></span><br><span class="line">    <span class="comment"># The original fd stdout points to. Usually 1 on POSIX systems.</span></span><br><span class="line">    original_stdout_fd = sys.stdout.fileno()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_redirect_stdout</span>(<span class="params">to_fd</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;Redirect stdout to the given file descriptor.&quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># Flush the C-level buffer stdout</span></span><br><span class="line">        libc.fflush(c_stdout)</span><br><span class="line">        <span class="comment"># Flush and close sys.stdout - also closes the file descriptor (fd)</span></span><br><span class="line">        sys.stdout.close()</span><br><span class="line">        <span class="comment"># Make original_stdout_fd point to the same file as to_fd</span></span><br><span class="line">        os.dup2(to_fd, original_stdout_fd)</span><br><span class="line">        <span class="comment"># Create a new sys.stdout that points to the redirected fd</span></span><br><span class="line">        sys.stdout = io.TextIOWrapper(os.fdopen(original_stdout_fd, <span class="string">&#x27;wb&#x27;</span>))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Save a copy of the original stdout fd in saved_stdout_fd</span></span><br><span class="line">    saved_stdout_fd = os.dup(original_stdout_fd)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># Create a temporary file and redirect stdout to it</span></span><br><span class="line">        tfile = tempfile.TemporaryFile(mode=<span class="string">&#x27;w+b&#x27;</span>)</span><br><span class="line">        _redirect_stdout(tfile.fileno())</span><br><span class="line">        <span class="comment"># Yield to caller, then redirect stdout back to the saved fd</span></span><br><span class="line">        <span class="keyword">yield</span></span><br><span class="line">        _redirect_stdout(saved_stdout_fd)</span><br><span class="line">        <span class="comment"># Copy contents of temporary file to the given stream</span></span><br><span class="line">        tfile.flush()</span><br><span class="line">        tfile.seek(<span class="number">0</span>, io.SEEK_SET)</span><br><span class="line">        stream.write(tfile.read())</span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        tfile.close()</span><br><span class="line">        os.close(saved_stdout_fd)</span><br></pre></td></tr></table></figure>
+<p>这里细节挺多，比如使用了<code>os.dup</code>和<code>os.dup2</code>操作文件描述符。如果你想具体了解这两个函数的话，请看它们的官方文档，这里不会详细介绍。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">f = io.BytesIO()</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> stdout_redirector(f):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;foobar&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="number">12</span>)</span><br><span class="line">    libc.puts(<span class="string">b&#x27;this comes from C&#x27;</span>)</span><br><span class="line">    os.system(<span class="string">&#x27;echo and this is from echo&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Got stdout: &quot;&#123;0&#125;&quot;&#x27;</span>.<span class="built_in">format</span>(f.getvalue().decode(<span class="string">&#x27;utf-8&#x27;</span>)))</span><br></pre></td></tr></table></figure>
+<p>这段代码给出的则是下面的输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Got stdout: &quot;and this is from echo</span><br><span class="line">this comes from C</span><br><span class="line">foobar</span><br><span class="line">12</span><br><span class="line">&quot;</span><br></pre></td></tr></table></figure>
+<p>注释：</p>
+<ol>
+<li>输出顺序可能并不如我们预想的一样，这是由缓存引起的。如果不同类型的输出之间顺序必须保存，需要另一些操作去关闭不同流的缓存功能。</li>
+<li>上面的代码是python3使用的，转移到python2很简单，因为仅仅是如<code>sys.stdout</code>不是如python3一样的被<code>io.TextIOWrapper</code>包裹等。</li>
+</ol>
+<link rel="stylesheet" href="/blog/css/spoiler.css" type="text/css"><script src="/blog/js/spoiler.js" type="text/javascript" async></script>
+  </article>
+
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/blog/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/blog/tags/python/" rel="tag">python</a>
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    
+      
+  <div class="nexmoe-post-copyright">
+    <strong>Author：</strong>小大圣<br>
+    <strong>Link：</strong><a href="https://shedarshian.github.io/blog/%E7%BC%96%E7%A8%8B/python-redirect.html" title="https:&#x2F;&#x2F;shedarshian.github.io&#x2F;blog&#x2F;%E7%BC%96%E7%A8%8B&#x2F;python-redirect.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;shedarshian.github.io&#x2F;blog&#x2F;%E7%BC%96%E7%A8%8B&#x2F;python-redirect.html</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+    
+    <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css">
+<div id="gitalk"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
+<script src="/blog/js/src/md5.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: 'Iv1.d401eaa1fb95895c',
+        clientSecret: 'ef9f6f08a2fb7ca63414802a68c72c70e0f851b8',
+        id: md5(window.location.pathname),
+        repo: 'blog',
+        owner: 'shedarshian',
+        admin: 'shedarshian'
+    })
+    gitalk.render('gitalk')
+</script>
+</section>
+  </div>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--<script src="/blog/js/app.js?v=1624190832630"></script>-->
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+
+
+
+
+</body>
+
+</html>

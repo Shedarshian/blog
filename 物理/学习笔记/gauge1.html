@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+
+<html lang="zh">
+
+<head>
+  
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><title>规范场论学习笔记1—规范不变性 - 石尾台聖の記憶空間</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="石尾台圣的记忆空间">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="果然还是应该把博客拿来做笔记嘛，回归本职工作~ 规范场论的前置知识大概是量子场论（心虚）但是其实我量子场论学的也是半懂不懂，就先勉强看一下看看能看懂到哪吧。。本文不是科普，需要前置知识，场论的科普的话我应该确实有心想做吧。。（但是得等我学会的之后才行.jpg） 目前我在看的这本书是《Gauge Theories of the Strong, Weak, and Electromagnetic In">
+<meta property="og:type" content="article">
+<meta property="og:title" content="规范场论学习笔记1—规范不变性">
+<meta property="og:url" content="https://shedarshian.github.io/blog/%E7%89%A9%E7%90%86/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/gauge1.html">
+<meta property="og:site_name" content="石尾台聖の記憶空間">
+<meta property="og:description" content="果然还是应该把博客拿来做笔记嘛，回归本职工作~ 规范场论的前置知识大概是量子场论（心虚）但是其实我量子场论学的也是半懂不懂，就先勉强看一下看看能看懂到哪吧。。本文不是科普，需要前置知识，场论的科普的话我应该确实有心想做吧。。（但是得等我学会的之后才行.jpg） 目前我在看的这本书是《Gauge Theories of the Strong, Weak, and Electromagnetic In">
+<meta property="og:locale">
+<meta property="article:published_time" content="2019-11-18T09:28:05.000Z">
+<meta property="article:modified_time" content="2019-11-18T11:17:06.444Z">
+<meta property="article:author" content="小大圣">
+<meta property="article:tag" content="物理">
+<meta property="article:tag" content="规范场论">
+<meta property="article:tag" content="非阿贝尔规范场论">
+<meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
+  
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1460233_cqpdeugxv8i.css">
+  
+  <!--<link rel="stylesheet" href="/blog/css/style.css?v=1624190832658">-->
+
+  
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/blog/" title="小大圣" class="mdui-btn mdui-btn-icon"><img src="https://shedarshian.github.io/blog/images/avatar.jpg" alt="小大圣"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/blog/" title="小大圣">
+            <img src="https://shedarshian.github.io/blog/images/avatar.jpg" alt="小大圣" alt="小大圣">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>Articles</span>15</div>
+        <div><span>Tags</span>19</div>
+        <div><span>Categories</span>12</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/blog/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/blog/uncategorized/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/blog/uncategorized/link.html" title="常用链接">
+            <i class="mdui-list-item-icon nexmoefont icon-link"></i>
+            <div class="mdui-list-item-content">
+                常用链接
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://cn.bing.com/search?q=site:shedarshian.github.io/blog/" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="Search"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Social</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://space.bilibili.com/4412417" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/shedarshian/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a><a class="mdui-ripple" href="https://weibo.com/u/3934220614" target="_blank" mdui-tooltip="{content: '新浪微博'}" style="color: rgb(255, 0, 0);background-color: rgba(255, 0, 0, .15);">
+            <i class="nexmoefont icon-weibo"></i>
+        </a><a class="mdui-ripple" href="https://thwiki.cc/-/16uo" target="_blank" mdui-tooltip="{content: 'THBWiki'}" style="color: rgb(233, 96, 0);background-color: rgb(233, 96, 0, .15);">
+            <i class="nexmoefont icon-hexagram"></i>
+        </a><a class="mdui-ripple" href="https://steamcommunity.com/id/shedarshian/" target="_blank" mdui-tooltip="{content: 'Steam'}" style="color: rgb(39, 39, 39);background-color: rgb(39, 39, 39, .15);">
+            <i class="nexmoefont icon-steam"></i>
+        </a><a class="mdui-ripple" href="https://www.eventernote.com/users/shedarshian" target="_blank" mdui-tooltip="{content: 'Eventernote'}" style="color: rgb(0, 0, 239);background-color: rgb(0, 0, 239, .15);">
+            <i class="nexmoefont icon-calender"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Categories</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/live/">live</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/live/repo/">repo</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/数学/初等数学/">初等数学</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/随笔/动画/">动画</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/物理/学习笔记/">学习笔记</a>
+          <span class="category-list-count">4</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/数学/">数学</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/游戏/">游戏</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/物理/">物理</a>
+          <span class="category-list-count">5</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/物理/科幻/">科幻</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/编程/">编程</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/随笔/">随笔</a>
+          <span class="category-list-count">3</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Tagcloud</h3>
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/blog/tags/Frozen/" style="font-size: 10px;">Frozen</a> <a href="/blog/tags/HyperRogue/" style="font-size: 10px;">HyperRogue</a> <a href="/blog/tags/live/" style="font-size: 12.5px;">live</a> <a href="/blog/tags/python/" style="font-size: 10px;">python</a> <a href="/blog/tags/%E3%82%B9%E3%83%95%E3%82%A3%E3%82%A2/" style="font-size: 15px;">スフィア</a> <a href="/blog/tags/%E4%B8%B0%E5%B4%8E%E7%88%B1%E7%94%9F/" style="font-size: 10px;">丰崎爱生</a> <a href="/blog/tags/%E5%8A%A8%E7%94%BB/" style="font-size: 10px;">动画</a> <a href="/blog/tags/%E5%AF%BF%E7%BE%8E%E8%8F%9C%E5%AD%90/" style="font-size: 10px;">寿美菜子</a> <a href="/blog/tags/%E5%B0%BA%E8%A7%84%E4%BD%9C%E5%9B%BE/" style="font-size: 10px;">尺规作图</a> <a href="/blog/tags/%E5%B8%8C%E6%A0%BC%E6%96%AF%E6%9C%BA%E5%88%B6/" style="font-size: 10px;">希格斯机制</a> <a href="/blog/tags/%E5%B9%B3%E9%9D%A2%E5%87%A0%E4%BD%95/" style="font-size: 10px;">平面几何</a> <a href="/blog/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 10px;">数学</a> <a href="/blog/tags/%E7%89%A9%E7%90%86/" style="font-size: 20px;">物理</a> <a href="/blog/tags/%E7%A7%91%E5%B9%BB/" style="font-size: 10px;">科幻</a> <a href="/blog/tags/%E7%A7%91%E6%99%AE/" style="font-size: 10px;">科普</a> <a href="/blog/tags/%E8%A7%84%E8%8C%83%E5%9C%BA%E8%AE%BA/" style="font-size: 17.5px;">规范场论</a> <a href="/blog/tags/%E9%9D%9E%E6%AC%A7%E5%87%A0%E4%BD%95/" style="font-size: 10px;">非欧几何</a> <a href="/blog/tags/%E9%9D%9E%E9%98%BF%E8%B4%9D%E5%B0%94%E8%A7%84%E8%8C%83%E5%9C%BA%E8%AE%BA/" style="font-size: 15px;">非阿贝尔规范场论</a> <a href="/blog/tags/%E9%AD%94%E6%B3%95%E7%A6%81%E4%B9%A6%E7%9B%AE%E5%BD%95/" style="font-size: 10px;">魔法禁书目录</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Archive</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/10/">October 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2021 小大圣
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: NaN%;"> 
+          <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="规范场论学习笔记1—规范不变性" class="lazyload">
+          <h1>规范场论学习笔记1—规范不变性</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2019年11月18日</a>
+    <a><i class="nexmoefont icon-areachart"></i>3k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 14 分钟</a>
+</div>
+
+  <div class="nexmoe-post-right">
+    
+  </div>
+
+  <article>
+    <link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.2.1/css/hint.min.css"><p>果然还是应该把博客拿来做笔记嘛，回归本职工作~</p>
+<p>规范场论的前置知识大概是量子场论（心虚）但是其实我量子场论学的也是半懂不懂，就先勉强看一下看看能看懂到哪吧。。本文不是科普，需要前置知识，场论的科普的话我应该确实有心想做吧。。（但是得等我学会的之后才行.jpg）</p>
+<p>目前我在看的这本书是《Gauge Theories of the Strong, Weak, and Electromagnetic Interactions》——Chris Quigg。</p>
+<div class="toc">
+<!-- toc -->
+<ul>
+<li><a href="#gui-fan-bu-bian-xing">规范不变性</a>
+<ul>
+<li><a href="#u-1-zheng-ti-bu-bian-xing">U(1)整体不变性</a></li>
+<li><a href="#u-1-gui-fan-bu-bian-xing">U(1)规范不变性</a></li>
+<li><a href="#su-2-fei-abel-gui-fan-bu-bian-xing">SU(2)非Abel规范不变性</a></li>
+<li><a href="#tao-lun">讨论</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+</div>
+<h1><a href="#gui-fan-bu-bian-xing" class="header-anchor">#</a><span id="gui-fan-bu-bian-xing">规范不变性</span></h1>
+<p>规范不变性起源于一个很自然的想法。在经典场论里，如果场量是复数，那么我们很自然的可以给全空间的场量做一个相位旋转变换，这一操作不会改变任何可观测到的物理结果。再比如，在强相互作用里，质子与中子是同位旋空间的两个正交态，同位旋空间可以用SU(2)群表示。与强相互作用有关的实验表明，强相互作用对这两种状态是完全等价的，如果没有电磁相互作用这一破坏对称性的相互作用的情况下，所谓“质子”态和“中子”态完全是人为规定的，其内部没有任何区别。也就是，如果我们在一个时刻选定一个初始状态并称其为“质子”态或者称其为“中子”态，那么根据之后的演变以及历史，可以将每一点处哪个方向是“质子”态哪个方向是“中子”态全部确定下来。</p>
+<p>但是，量子场论里由于有狭义相对论的融入，这一点显得并不那么显然。我在一个局域处选定质子/中子态，它应该与另一个人在其他地方选定的标架没有关系。也就是理论上应该可以在空间每一点独立选定一个标架，这些标架之间通过变换联系。类比回之前的复数场量的例子，就是并不是做全局旋转<span>$\psi&apos;=e^{i\alpha}\psi$</span><!-- Has MathJax -->，而是在每个点的旋转相位都不一样：</p>
+<p>\begin{equation}<br>
+\psi'=e^{i\alpha(\bm{x})}\psi<br>
+\end{equation}</p>
+<p>这就是所谓的定域规范变换，简称<strong>规范变换</strong>。我们后面可以看到，一个规范变换会产生出一个零质量的Goldstone玻色子，如果我们再给这个玻色子规定一个动能项，那么这就是一个<strong>规范粒子</strong>。规范变换在麦克斯韦电磁学里自然地被满足，而在QED里，上述的相位旋转规范变换会产生出<strong>光子</strong>。</p>
+<p>相位旋转变换U(1)群是Abel群，也就是其群元可交换。而后Yang（杨振宁）与Mills等人将这一理论推广到了非Abel群，也就是所谓的非阿贝尔规范变换。上面的质子/中子同位旋SU(2)群就是一个例子。</p>
+<span id="more"></span>
+<h2><a href="#u-1-zheng-ti-bu-bian-xing" class="header-anchor">#</a><span id="u-1-zheng-ti-bu-bian-xing">U(1)整体不变性</span></h2>
+<p>根据Noether定理，U(1)整体不变性导出电荷守恒（当然并没有必要非得是电荷，就是一个满足相加性的荷）。考虑复场<span>$\phi$</span><!-- Has MathJax -->，对应的Lagrange量为：</p>
+<span>$$\begin{equation}
+\mathcal{L}=\left\|\partial^\mu\phi\right\|^2-m^2\left\|\phi\right\|^2
+\end{equation}$$</span><!-- Has MathJax -->
+<p>由于场量是复数，我们认为<span>$\phi$</span><!-- Has MathJax -->与<span>$\phi^*$</span><!-- Has MathJax -->是独立的两个变量。其Euler-Lagrange方程给出Klein-Gordon方程：</p>
+<span>$$\begin{equation}
+\left(&square;+m^2\right)\phi(x)=0\ and\ conj.
+\end{equation}$$</span><!-- Has MathJax -->
+<p>对其应用整体变换</p>
+<span>$$\begin{equation}
+\phi(x)\to e^{iq\alpha}\phi(x), \phi^*(x)\to e^{-iq\alpha}\phi^*(x)
+\end{equation}$$</span><!-- Has MathJax -->
+<p>使<span>$\delta\mathcal{L}=0$</span><!-- Has MathJax -->可以得出Noether流<span>$j^\mu=iq\bqty{\phi^*\partial^\mu\phi-(\partial^\mu\phi)\phi^*}\equiv iq\phi^*\overset\leftrightarrow{\partial^\mu}\phi$</span><!-- Has MathJax -->守恒：<span>$\partial_\mu j^\mu=0$</span><!-- Has MathJax -->。认为<span>$q$</span><!-- Has MathJax -->是电荷，即可得出<span>$j^\mu$</span><!-- Has MathJax -->是电磁流的结论。</p>
+<h2><a href="#u-1-gui-fan-bu-bian-xing" class="header-anchor">#</a><span id="u-1-gui-fan-bu-bian-xing">U(1)规范不变性</span></h2>
+<p>那么如果是定域变换呢？变换：</p>
+<span>$$\begin{equation}
+\phi(x)\to e^{iq\alpha(x)}\phi(x)
+\end{equation}$$</span><!-- Has MathJax -->
+<p>依赖<span>$\phi$</span><!-- Has MathJax -->本身的项的变换还是与整体变换相同，但是梯度项的变换就不再相同了：</p>
+<span>$$\begin{equation}
+\partial_\mu\phi(x)\to e^{iq\alpha(x)}\bqty{\partial_\mu\phi(x)+iq\pqty{\partial_\mu\alpha(x)}\phi(x)}
+\end{equation}$$</span><!-- Has MathJax -->
+<p>多了后面的一项。那么，我们自然想到，定义一个新的“规范协变导数”<span>$\mathcal{D}_\mu$</span><!-- Has MathJax -->：</p>
+<span>$$\begin{equation}
+\mathcal{D}_\mu\equiv\partial_\mu+iqA_\mu(x)
+\end{equation}$$</span><!-- Has MathJax -->
+<p>这时，为让诸如<span>$\mathcal{D}_\mu\phi$</span><!-- Has MathJax -->的项就会与<span>$\phi$</span><!-- Has MathJax -->本身的项有类似的变换形式：</p>
+<span>$$\begin{equation}
+\mathcal{D}_\mu\phi\to e^{iq\alpha(x)}\mathcal{D}_\mu\phi
+\end{equation}$$</span><!-- Has MathJax -->
+<span>$A_\mu(x)$</span><!-- Has MathJax -->在变换时也就要有如下的变换形式：
+<span>$$\begin{equation}
+A_\mu(x)\to A_\mu(x)-\partial_\mu\alpha(x) \label{A_trans}
+\end{equation}$$</span><!-- Has MathJax -->
+<p>于是<span>$A_\mu$</span><!-- Has MathJax -->被称为<strong>规范场</strong>。<span>$\partial_\mu\to\mathcal{D}_\mu$</span><!-- Has MathJax -->这一替换本身也隐含了规范场与物质之间的相互作用，我们来看自由Dirac场的Lagrange量：</p>
+<span>$$\begin{equation}
+\mathcal{L}_\mathrm{free}=\bar{\psi}\pqty{i\gamma^\mu\partial_\mu-m}\psi
+\end{equation}$$</span><!-- Has MathJax -->
+<p>会被替换成规范不变的Lagrange量：</p>
+<span>$$\begin{equation}
+\begin{aligned} \mathcal{L}&amp;=\bar{\psi}\pqty{i\gamma^\mu\mathcal{D}_\mu-m}\psi \\
+&amp;=\bar{\psi}\pqty{i\gamma^\mu\partial_\mu-m}\psi-qA_\mu\bar{\psi}\gamma^\mu\psi \\
+&amp;=\mathcal{L}_\mathrm{free}-J^\mu A_\mu
+\end{aligned}
+\end{equation}$$</span><!-- Has MathJax -->
+<p>其中电磁流<span>$J^\mu=q\bar{\psi}\gamma^\mu\psi$</span><!-- Has MathJax -->。然后，如果我们给势<span>$A_\mu$</span><!-- Has MathJax -->加上一个动能项，这就是完整的QED的Lagrange量了。由麦克斯韦方程反推出的动能项为<span>$-\frac{1}{4}F^{\mu\nu}F_{\mu\nu}$</span><!-- Has MathJax -->，它满足在变换\eqref{A_trans}下规范不变。其中<span>$F^{\mu\nu}=\partial^\nu A^\mu-\partial^\mu A^\nu$</span><!-- Has MathJax -->：</p>
+<span>$$\begin{equation}
+\mathcal{L}_\mathrm{QED}=\mathcal{L}_\mathrm{free}-J^\mu A_\mu-\frac{1}{4}F^{\mu\nu}F_{\mu\nu}
+\end{equation}$$</span><!-- Has MathJax -->
+<p>但是，光子的质量项<span>$\frac{1}{2}m^2A^\mu A_\mu$</span><!-- Has MathJax -->会破坏规范不变性：</p>
+<span>$$\begin{equation}
+A^\mu A_\mu\to\pqty{A^\mu-\partial^\mu\alpha}\pqty{A_\mu-\partial_\mu\alpha}\not=A^\mu A_\mu
+\end{equation}$$</span><!-- Has MathJax -->
+<p>也就是目前理论下的光子不能有质量。</p>
+<h2><a href="#su-2-fei-abel-gui-fan-bu-bian-xing" class="header-anchor">#</a><span id="su-2-fei-abel-gui-fan-bu-bian-xing">SU(2)非Abel规范不变性</span></h2>
+<p>非Abel群的情况就相对复杂一点了。考虑SU(2)群的同位旋变换。同样还是规范变换：</p>
+<span>$$\begin{equation}
+\psi(x)\to\psi&apos;(x)=G(x)\psi(x)
+\end{equation}$$</span><!-- Has MathJax -->
+<p>其中</p>
+<span>$$\begin{equation}
+G(x)\equiv\exp(\frac{i\vb{\tau}\vdot\vb{\alpha}(x)}{2})
+\end{equation}$$</span><!-- Has MathJax -->
+<span>$\vb{\tau}$</span><!-- Has MathJax -->是Pauli 2*2矩阵。则梯度项的变换形式就是：
+<span>$$\begin{equation}
+\partial_\mu\psi\to G\pqty{\partial_\mu\psi}+\pqty{\partial_\mu G}\psi
+\end{equation}$$</span><!-- Has MathJax -->
+<p>为保证规范不变，同样引入一个规范协变导数：</p>
+<span>$$\begin{equation}
+\mathcal{D}_\mu\equiv I\partial_\mu+igB_\mu
+\end{equation}$$</span><!-- Has MathJax -->
+<p>其中</p>
+<span>$$\begin{equation}
+I=\pqty{\begin{matrix} 1 &amp; 0 \\ 0 &amp; 1 \end{matrix}}
+\end{equation}$$</span><!-- Has MathJax -->
+<p>为同位旋空间的单位矩阵，<span>$g$</span><!-- Has MathJax -->则起着类似强相互作用耦合常数的作用。<span>$B_\mu$</span><!-- Has MathJax -->则是由下式定义的2*2矩阵：</p>
+<span>$$\begin{equation}
+B_\mu=\frac{1}{2}\vb{\tau}\vdot\vb{b}_\mu=\frac{1}{2}\tau^ab_\mu^a=\frac{1}{2}\pqty{\begin{matrix} b_\mu^3 &amp; b_\mu^1-ib_\mu^2 \\ b_\mu^1+ib_\mu^2 &amp; -b_\mu^3 \end{matrix}}
+\end{equation}$$</span><!-- Has MathJax -->
+<p>三个规范场是<span>$\vb{b}_\mu=\pqty{b_\mu^1, b_\mu^2, b_\mu^3}$</span><!-- Has MathJax -->，同位旋分量<span>$a$</span><!-- Has MathJax -->从1求和至3。</p>
+<p>我们的目的当然还是使</p>
+<span>$$\begin{equation}
+\mathcal{D}_\mu\psi\to \mathcal{D}_\mu&apos;\psi&apos;=G\pqty{\mathcal{D}_\mu\psi}
+\end{equation}$$</span><!-- Has MathJax -->
+<p>为此我们必须找到<span>$B_\mu$</span><!-- Has MathJax -->的变换形式。</p>
+<span>$$\begin{equation}
+\begin{aligned} \mathcal{D}_\mu&apos;\psi&apos;&amp;=\pqty{\partial_\mu+igB_\mu&apos;}\psi&apos; \\
+&amp;=G\pqty{\partial_\mu\psi}+\pqty{\partial_\mu G}\psi+igB_\mu&apos;\pqty{G\psi} \\
+&amp;\equiv G\pqty{\partial_\mu+igB_\mu}\psi \\
+&amp;=G\pqty{\partial_\mu\psi}+igG\pqty{B_\mu\psi}
+\end{aligned}
+\end{equation}$$</span><!-- Has MathJax -->
+<p>也就是需要使</p>
+<span>$$\begin{equation}
+igB_\mu&apos;\pqty{G\psi}=igG\pqty{B_\mu\psi}-\pqty{\partial_\mu G}\psi
+\end{equation}$$</span><!-- Has MathJax -->
+<p>对任意<span>$\psi$</span><!-- Has MathJax -->成立。在<span>$\psi$</span><!-- Has MathJax -->前插入<span>$I=G^{-1}G$</span><!-- Has MathJax -->并令<span>$G\psi\to\psi$</span><!-- Has MathJax -->可得：</p>
+<span>$$\begin{equation}
+B_\mu&apos;=GB_\mu G^{-1}+\frac{i}{g}\pqty{\partial_\mu G}G^{-1}=G\bqty{B_\mu+\frac{i}{g}G^{-1}\pqty{\partial_\mu G}}G^{-1}
+\end{equation}$$</span><!-- Has MathJax -->
+<p>我们继续Lagrange量的构造：</p>
+<span>$$\begin{equation}
+\begin{aligned} \mathcal{L}&amp;=\bar{\psi}\pqty{i\gamma^\mu\mathcal{D}_\mu-m}\psi \\
+&amp;=\mathcal{L}_0-g\bar{\psi}\gamma^\mu B_\mu\psi \\
+&amp;=\mathcal{L}_0-\frac{g}{2}\vb{b}_\mu\vdot\bar{\psi}\gamma^\mu\vb{\tau}\psi
+\end{aligned} 
+\end{equation}$$</span><!-- Has MathJax -->
+<p>正如之前QED的一样。那么接下来，我们需要构造一个场强张量，并由它构造场的动能项：</p>
+<span>$$\begin{equation}
+F_{\mu\nu}\equiv\frac{1}{2}\vb{F}_{\mu\nu}\vdot\vb{\tau}=\frac{1}{2}F_{\mu\nu}^a\tau^a
+\end{equation}$$</span><!-- Has MathJax -->
+<span>$$\begin{equation}
+\mathcal{L}_\mathrm{gauge}=-\frac{1}{4}\vb{F}_{\mu\nu}\vdot\vb{F}^{\mu\nu}=-\frac{1}{2}\tr(F_{\mu\nu}F^{\mu\nu})
+\end{equation}$$</span><!-- Has MathJax -->
+<p>上一步最后一个等号来自Pauli矩阵的恒等式<span>$\tr(\tau^a\tau^b)=2\delta^{ab}$</span><!-- Has MathJax -->。也就是，我们需要一个能够如下形式变换的场强张量：</p>
+<span>$$\begin{equation}
+F_{\mu\nu}&apos;=GF_{\mu\nu}G^{-1} \label{tiaojian}
+\end{equation}$$</span><!-- Has MathJax -->
+<p>传统的QED形式是不满足这一条件的（推导略）：</p>
+<span>$$\begin{equation}
+\partial_\nu B_\mu&apos;-\partial_\mu B_\nu&apos;\not=G\pqty{\partial_\nu B_\mu-\partial_\mu B_\nu}G^{-1}
+\end{equation}$$</span><!-- Has MathJax -->
+<p>多余的项很显然，来自群的非Abel结构。那么怎么构造呢？我们发现，QED的场强张量是可以表示成这个形式的：</p>
+<span>$$\begin{equation}
+F_{\mu\nu}=\frac{1}{iq}\comm{\mathcal{D}_\nu}{\mathcal{D}_\mu}
+\end{equation}$$</span><!-- Has MathJax -->
+<p>其中<span>$\mathcal{D}_\mu=\partial_\mu+iqA_\mu$</span><!-- Has MathJax -->，这是因为</p>
+<span>$$\begin{equation}
+\begin{aligned} F_\mu\nu&amp;=\frac{1}{iq}\comm{\pqty{\partial_\nu+iqA_\nu}}{\pqty{\partial_\mu+iqA_\mu}} \\
+&amp;=\partial_\nu A_\mu-\partial_\mu A_\nu+iq\comm{A_\nu}{A_\mu}
+\end{aligned}
+\end{equation}$$</span><!-- Has MathJax -->
+<p>最后一项的对易子在Abel理论下消失了。这暗示在非Abel理论下，场强张量应该有如下形式：</p>
+<span>$$\begin{equation}
+F_\mu\nu=\frac{1}{ig}\comm{\mathcal{D}_\nu}{\mathcal{D}_\mu}=\partial_\nu B_\mu-\partial_\mu B_\nu+ig\comm{B_\nu}{B_\mu}
+\end{equation}$$</span><!-- Has MathJax -->
+<p>可以推导出它满足式\eqref{tiaojian}的条件。Yang-Mills理论的规范不变的Lagrange量就是：</p>
+<span>$$\begin{equation}
+\mathcal{L}=\bar{\psi}\pqty{i\gamma^\mu\mathcal{D}_\mu-m}\psi-\frac{1}{2}\tr(F_{\mu\nu}F^{\mu\nu})
+\end{equation}$$</span><!-- Has MathJax -->
+<p>同样，一个质量项<span>$\frac{1}{2}m^2B^\mu B_\mu$</span><!-- Has MathJax -->会破坏规范不变性，传递强相互作用的介子（<span>$\pi$</span><!-- Has MathJax -->介子）不能有质量。</p>
+<p>对于以后的推广有用的是，我们可以将场强张量的分量表示出来：</p>
+<span>$$\begin{equation}
+F_{\mu\nu}^l=\partial_\nu b_\mu^l-\partial_\mu b_\nu^l+g\varepsilon_{jkl}b_\mu^j b_\nu^k
+\end{equation}$$</span><!-- Has MathJax -->
+<p>对于不是SU(2)群的其他规范群来讲，Levi-Civita符号<span>$\varepsilon_{jkl}$</span><!-- Has MathJax -->将会被群的结构因子<span>$f_{jkl}$</span><!-- Has MathJax -->替代。</p>
+<h2><a href="#tao-lun" class="header-anchor">#</a><span id="tao-lun">讨论</span></h2>
+<p>事实上，QED是一个自由场论，光子本身不带电荷，也就是光子与光子之间没有相互作用。但是在非Abel规范场论里，由于场强张量多了一个非线性项，在<span>$F_{\mu\nu}F^{\mu\nu}$</span><!-- Has MathJax -->里会出现势的三次项、四次项，也就是规范玻色子自己和自己存在相互作用。在Feynman图里表现为三玻色子顶角与四玻色子顶角，这在QED里是没有的。这也使得使用微扰论的手段研究这一理论有很大的难度。</p>
+<p>上面所说的这个规范玻色子必须是零质量的，这与实验严重不符：强相互作用的力程很短，是由交换一个有质量的<span>$\pi$</span><!-- Has MathJax -->介子描述的。但是，这一规范不变性的思想却是很重要而且很漂亮的。这一点可以通过很多手段被规避。换一个规范群，可以建立QCD，其中的<span>$\pi$</span><!-- Has MathJax -->介子是复合粒子。在下一章，首先会介绍一种叫做自发对称性破缺的机制，这一机制同样会产生出一个零质量的玻色子。乍一看，我们的问题好像增加了，但是实际上，这两个机制结合时，会产生另一种叫Higgs机制的作用，它不仅消除了两个零质量粒子，还多出了一个含质量的规范玻色子。</p>
+<link rel="stylesheet" href="/blog/css/spoiler.css" type="text/css"><script src="/blog/js/spoiler.js" type="text/javascript" async></script>
+  </article>
+
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/blog/categories/%E7%89%A9%E7%90%86/">物理</a><a class="nexmoefont icon-appstore-fill -link" href="/blog/categories/%E7%89%A9%E7%90%86/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/blog/tags/%E7%89%A9%E7%90%86/" rel="tag">物理</a> <a class="nexmoefont icon-tag-fill -none-link" href="/blog/tags/%E8%A7%84%E8%8C%83%E5%9C%BA%E8%AE%BA/" rel="tag">规范场论</a> <a class="nexmoefont icon-tag-fill -none-link" href="/blog/tags/%E9%9D%9E%E9%98%BF%E8%B4%9D%E5%B0%94%E8%A7%84%E8%8C%83%E5%9C%BA%E8%AE%BA/" rel="tag">非阿贝尔规范场论</a>
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    
+      
+  <div class="nexmoe-post-copyright">
+    <strong>Author：</strong>小大圣<br>
+    <strong>Link：</strong><a href="https://shedarshian.github.io/blog/%E7%89%A9%E7%90%86/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/gauge1.html" title="https:&#x2F;&#x2F;shedarshian.github.io&#x2F;blog&#x2F;%E7%89%A9%E7%90%86&#x2F;%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&#x2F;gauge1.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;shedarshian.github.io&#x2F;blog&#x2F;%E7%89%A9%E7%90%86&#x2F;%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&#x2F;gauge1.html</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+    
+    <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css">
+<div id="gitalk"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
+<script src="/blog/js/src/md5.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: 'Iv1.d401eaa1fb95895c',
+        clientSecret: 'ef9f6f08a2fb7ca63414802a68c72c70e0f851b8',
+        id: md5(window.location.pathname),
+        repo: 'blog',
+        owner: 'shedarshian',
+        admin: 'shedarshian'
+    })
+    gitalk.render('gitalk')
+</script>
+</section>
+  </div>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--<script src="/blog/js/app.js?v=1624190832662"></script>-->
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({{ JSON.stringify(config) }});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="{{ src }}">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+
+  
+
+
+
+
+
+</body>
+
+</html>

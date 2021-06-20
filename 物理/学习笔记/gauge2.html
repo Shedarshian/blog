@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+
+<html lang="zh">
+
+<head>
+  
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><title>规范场论学习笔记2—自发对称性破缺 - 石尾台聖の記憶空間</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="石尾台圣的记忆空间">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="物理学极其重视对称性，上一篇笔记的规范不变性是局域变换对称性的思想产生的结果，而本篇将会从另一个角度：对称性破缺。我们将会看到自发对称性破缺会产生零质量玻色子，而考虑上一篇所讲的规范不变性的自发破缺，则会使这种零质量玻色子消失，而给规范粒子赋予质量。    自发对称性破缺  连续对称性的自发破缺 规范对称性的自发破缺 非Abel规范对称性的自发破缺 Higgs机制      自发对称性破缺 一般说">
+<meta property="og:type" content="article">
+<meta property="og:title" content="规范场论学习笔记2—自发对称性破缺">
+<meta property="og:url" content="https://shedarshian.github.io/blog/%E7%89%A9%E7%90%86/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/gauge2.html">
+<meta property="og:site_name" content="石尾台聖の記憶空間">
+<meta property="og:description" content="物理学极其重视对称性，上一篇笔记的规范不变性是局域变换对称性的思想产生的结果，而本篇将会从另一个角度：对称性破缺。我们将会看到自发对称性破缺会产生零质量玻色子，而考虑上一篇所讲的规范不变性的自发破缺，则会使这种零质量玻色子消失，而给规范粒子赋予质量。    自发对称性破缺  连续对称性的自发破缺 规范对称性的自发破缺 非Abel规范对称性的自发破缺 Higgs机制      自发对称性破缺 一般说">
+<meta property="og:locale">
+<meta property="og:image" content="https://shedarshian.github.io/blog/%E7%89%A9%E7%90%86/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/gauge2/well.png">
+<meta property="og:image" content="https://shedarshian.github.io/blog/%E7%89%A9%E7%90%86/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/gauge2/well3d.png">
+<meta property="article:published_time" content="2019-11-25T03:30:37.000Z">
+<meta property="article:modified_time" content="2020-02-10T06:48:02.754Z">
+<meta property="article:author" content="小大圣">
+<meta property="article:tag" content="物理">
+<meta property="article:tag" content="规范场论">
+<meta property="article:tag" content="非阿贝尔规范场论">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://shedarshian.github.io/blog/%E7%89%A9%E7%90%86/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/gauge2/well.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
+  
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1460233_cqpdeugxv8i.css">
+  
+  <!--<link rel="stylesheet" href="/blog/css/style.css?v=1624190832649">-->
+
+  
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/blog/" title="小大圣" class="mdui-btn mdui-btn-icon"><img src="https://shedarshian.github.io/blog/images/avatar.jpg" alt="小大圣"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/blog/" title="小大圣">
+            <img src="https://shedarshian.github.io/blog/images/avatar.jpg" alt="小大圣" alt="小大圣">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>Articles</span>15</div>
+        <div><span>Tags</span>19</div>
+        <div><span>Categories</span>12</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/blog/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/blog/uncategorized/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/blog/uncategorized/link.html" title="常用链接">
+            <i class="mdui-list-item-icon nexmoefont icon-link"></i>
+            <div class="mdui-list-item-content">
+                常用链接
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://cn.bing.com/search?q=site:shedarshian.github.io/blog/" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="Search"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Social</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://space.bilibili.com/4412417" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/shedarshian/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a><a class="mdui-ripple" href="https://weibo.com/u/3934220614" target="_blank" mdui-tooltip="{content: '新浪微博'}" style="color: rgb(255, 0, 0);background-color: rgba(255, 0, 0, .15);">
+            <i class="nexmoefont icon-weibo"></i>
+        </a><a class="mdui-ripple" href="https://thwiki.cc/-/16uo" target="_blank" mdui-tooltip="{content: 'THBWiki'}" style="color: rgb(233, 96, 0);background-color: rgb(233, 96, 0, .15);">
+            <i class="nexmoefont icon-hexagram"></i>
+        </a><a class="mdui-ripple" href="https://steamcommunity.com/id/shedarshian/" target="_blank" mdui-tooltip="{content: 'Steam'}" style="color: rgb(39, 39, 39);background-color: rgb(39, 39, 39, .15);">
+            <i class="nexmoefont icon-steam"></i>
+        </a><a class="mdui-ripple" href="https://www.eventernote.com/users/shedarshian" target="_blank" mdui-tooltip="{content: 'Eventernote'}" style="color: rgb(0, 0, 239);background-color: rgb(0, 0, 239, .15);">
+            <i class="nexmoefont icon-calender"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Categories</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/live/">live</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/live/repo/">repo</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/数学/初等数学/">初等数学</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/随笔/动画/">动画</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/物理/学习笔记/">学习笔记</a>
+          <span class="category-list-count">4</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/数学/">数学</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/游戏/">游戏</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/物理/">物理</a>
+          <span class="category-list-count">5</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/物理/科幻/">科幻</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/编程/">编程</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/blog/categories/随笔/">随笔</a>
+          <span class="category-list-count">3</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Tagcloud</h3>
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/blog/tags/Frozen/" style="font-size: 10px;">Frozen</a> <a href="/blog/tags/HyperRogue/" style="font-size: 10px;">HyperRogue</a> <a href="/blog/tags/live/" style="font-size: 12.5px;">live</a> <a href="/blog/tags/python/" style="font-size: 10px;">python</a> <a href="/blog/tags/%E3%82%B9%E3%83%95%E3%82%A3%E3%82%A2/" style="font-size: 15px;">スフィア</a> <a href="/blog/tags/%E4%B8%B0%E5%B4%8E%E7%88%B1%E7%94%9F/" style="font-size: 10px;">丰崎爱生</a> <a href="/blog/tags/%E5%8A%A8%E7%94%BB/" style="font-size: 10px;">动画</a> <a href="/blog/tags/%E5%AF%BF%E7%BE%8E%E8%8F%9C%E5%AD%90/" style="font-size: 10px;">寿美菜子</a> <a href="/blog/tags/%E5%B0%BA%E8%A7%84%E4%BD%9C%E5%9B%BE/" style="font-size: 10px;">尺规作图</a> <a href="/blog/tags/%E5%B8%8C%E6%A0%BC%E6%96%AF%E6%9C%BA%E5%88%B6/" style="font-size: 10px;">希格斯机制</a> <a href="/blog/tags/%E5%B9%B3%E9%9D%A2%E5%87%A0%E4%BD%95/" style="font-size: 10px;">平面几何</a> <a href="/blog/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 10px;">数学</a> <a href="/blog/tags/%E7%89%A9%E7%90%86/" style="font-size: 20px;">物理</a> <a href="/blog/tags/%E7%A7%91%E5%B9%BB/" style="font-size: 10px;">科幻</a> <a href="/blog/tags/%E7%A7%91%E6%99%AE/" style="font-size: 10px;">科普</a> <a href="/blog/tags/%E8%A7%84%E8%8C%83%E5%9C%BA%E8%AE%BA/" style="font-size: 17.5px;">规范场论</a> <a href="/blog/tags/%E9%9D%9E%E6%AC%A7%E5%87%A0%E4%BD%95/" style="font-size: 10px;">非欧几何</a> <a href="/blog/tags/%E9%9D%9E%E9%98%BF%E8%B4%9D%E5%B0%94%E8%A7%84%E8%8C%83%E5%9C%BA%E8%AE%BA/" style="font-size: 15px;">非阿贝尔规范场论</a> <a href="/blog/tags/%E9%AD%94%E6%B3%95%E7%A6%81%E4%B9%A6%E7%9B%AE%E5%BD%95/" style="font-size: 10px;">魔法禁书目录</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Archive</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/10/">October 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2021 小大圣
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: NaN%;"> 
+          <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="规范场论学习笔记2—自发对称性破缺" class="lazyload">
+          <h1>规范场论学习笔记2—自发对称性破缺</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2019年11月25日</a>
+    <a><i class="nexmoefont icon-areachart"></i>2.2k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 10 分钟</a>
+</div>
+
+  <div class="nexmoe-post-right">
+    
+  </div>
+
+  <article>
+    <link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.2.1/css/hint.min.css"><p>物理学极其重视对称性，上一篇笔记的规范不变性是局域变换对称性的思想产生的结果，而本篇将会从另一个角度：对称性破缺。我们将会看到自发对称性破缺会产生零质量玻色子，而考虑上一篇所讲的规范不变性的自发破缺，则会使这种零质量玻色子消失，而给规范粒子赋予质量。</p>
+<div class="toc">
+<!-- toc -->
+<ul>
+<li><a href="#zi-fa-dui-cheng-xing-po-que">自发对称性破缺</a>
+<ul>
+<li><a href="#lian-xu-dui-cheng-xing-de-zi-fa-po-que">连续对称性的自发破缺</a></li>
+<li><a href="#gui-fan-dui-cheng-xing-de-zi-fa-po-que">规范对称性的自发破缺</a></li>
+<li><a href="#fei-abel-gui-fan-dui-cheng-xing-de-zi-fa-po-que">非Abel规范对称性的自发破缺</a></li>
+<li><a href="#higgs-ji-zhi">Higgs机制</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+</div>
+<h1><a href="#zi-fa-dui-cheng-xing-po-que" class="header-anchor">#</a><span id="zi-fa-dui-cheng-xing-po-que">自发对称性破缺</span></h1>
+<p>一般说到对称性指的都是精确对称性，但是自然界里有很多只是近似的对称性，比如同位旋对称性在强相互作用里对称，但是在电磁相互作用里却有极少量的破缺，导致质子和中子的不同。一般这种近似对称性的描述是在对称的拉格朗日量里加一个破坏对称性的微扰小量：</p>
+<span>$$\begin{equation}
+\mathcal{L}=\mathcal{L}_\mathrm{symmetric}+\varepsilon\mathcal{L}_\mathrm{symmetry\ breaking}
+\end{equation}$$</span><!-- Has MathJax -->
+<p>但是也有这种叫做自发对称性破缺的机制，<span>$\mathcal{L}$</span><!-- Has MathJax -->满足精确的对称性，但是由<span>$\mathcal{L}$</span><!-- Has MathJax -->得出的物理真空态却不满足。举个例子，一块处于临界温度之上的无限大铁磁体，它的每个自旋的指向都是随机的，满足局域的SO(3)旋转不变性，但是如果降到临界温度之下，它的能量最低状态（也就是真空态）是所有自旋朝同一方向排列，局域SO(3)旋转不变性被破坏，只剩下了SO(2)的不变性。再举个例子，如果系统的势能<span>$V(\phi)$</span><!-- Has MathJax -->的形式是：</p>
+<span>$$\begin{equation}
+V(\phi)=\frac{1}{2}\mu^2\phi^2+\frac{1}{4}\vqty{\lambda}\phi^4
+\end{equation}$$</span><!-- Has MathJax -->
+<p>这个势满足空间反射对称性<span>$\phi\to-\phi$</span><!-- Has MathJax -->。在<span>$\mu^2&gt;0$</span><!-- Has MathJax -->时，势阱像下图左面一样，真空态在0处，对称性得到保证。但是在<span>$\mu^2&lt;0$</span><!-- Has MathJax -->时，势阱变成了下图右面这样。能量最低的物理真空态只能选择左右之一，这时对称性就发生了自发破缺。</p>
+<img src="/blog/%E7%89%A9%E7%90%86/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/gauge2/well.png" class>
+<span id="more"></span>
+<p>对于<span>$\mu^2&gt;0$</span><!-- Has MathJax -->的情况，真空态是<span>$\expval{\phi}_0=0$</span><!-- Has MathJax -->，于是它就代表一个质量为<span>$\mu$</span><!-- Has MathJax -->的粒子：</p>
+<span>$$\begin{equation}
+\mathcal{L}=\frac{1}{2}\bqty{\pqty{\partial_\mu\phi}\pqty{\partial^\mu\phi}-\mu^2\phi^2}+o\pqty{\phi^2}
+\end{equation}$$</span><!-- Has MathJax -->
+<p>而对于<span>$\mu^2&lt;0$</span><!-- Has MathJax -->的情况，真空态必须取为能量最低值<span>$\expval{\phi}_0=\pm\sqrt{-\frac{\mu^2}{\vqty{\lambda}}}=\pm v$</span><!-- Has MathJax -->。将<span>$\phi$</span><!-- Has MathJax -->平移，定义<span>$\phi&apos;\equiv\phi-v$</span><!-- Has MathJax -->，则：</p>
+<span>$$\begin{equation}
+\mathcal{L}=\frac{1}{2}\pqty{\partial_\mu\phi&apos;}\pqty{\partial^\mu\phi&apos;}-\vqty{\mu}^2\pqty{\frac{\phi&apos;^4}{4v^2}+\frac{\phi&apos;^3}{v}+\phi&apos;^2-\frac{v^2}{4}}
+\end{equation}$$</span><!-- Has MathJax -->
+<p>其<span>$\phi&apos;^2$</span><!-- Has MathJax -->项的系数除以<span>$\pqty{\partial_\mu\phi&apos;}\pqty{\partial^\mu\phi&apos;}$</span><!-- Has MathJax -->项的系数为<span>$2\vqty{\mu^2}$</span><!-- Has MathJax -->，也就是一质量为<span>$\sqrt{-2\mu^2}$</span><!-- Has MathJax -->的粒子。</p>
+<h2><a href="#lian-xu-dui-cheng-xing-de-zi-fa-po-que" class="header-anchor">#</a><span id="lian-xu-dui-cheng-xing-de-zi-fa-po-que">连续对称性的自发破缺</span></h2>
+<p>上面二维的图破缺的是空间反射对称性，这是离散对称性。对连续对称性的破坏将会有不同的结果。考虑二维场<span>$\vb{\phi}\equiv\pqty{\begin{array}{c} \phi_1 \\ \phi_2 \end{array}}$</span><!-- Has MathJax -->，其Lagrange量为：</p>
+<span>$$\begin{equation}
+\mathcal{L}=\frac{1}{2}\bqty{\pqty{\partial_\mu\phi_1}\pqty{\partial^\mu\phi_1}+\pqty{\partial_\mu\phi_2}\pqty{\partial^\mu\phi_2}}-V(\phi_1^2+\phi_2^2)
+\end{equation}$$</span><!-- Has MathJax -->
+<p>同样，在<span>$\mu^2&gt;0$</span><!-- Has MathJax -->时，势阱像下图左面一样，真空态在0处，在<span>$\mu^2&lt;0$</span><!-- Has MathJax -->时，势阱变成了下图右面这样，真空态为最低处一圈上的任意一点，SO(2)对称性发生自发破缺。</p>
+<img src="/blog/%E7%89%A9%E7%90%86/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/gauge2/well3d.png" class>
+<p>选取<span>$\expval{\vb{\phi}}_0=\pqty{\begin{array}{c} v \\ 0 \end{array}}$</span><!-- Has MathJax -->为真空态，并设：</p>
+<span>$$\begin{equation}
+\vb{\phi}&apos;\equiv\vb{\phi}-\expval{\vb{\phi}}_0\equiv\pqty{\begin{array}{c} \eta \\ \zeta \end{array}}
+\end{equation}$$</span><!-- Has MathJax -->
+<p>可以得到</p>
+<span>$$\begin{equation}
+\mathcal{L}=\frac{1}{2}\bqty{\pqty{\partial_\mu\eta}\pqty{\partial^\mu\eta}+2\mu^2\eta^2}+\frac{1}{2}\bqty{\pqty{\partial_\mu\zeta}\pqty{\partial^\mu\zeta}}+o\pqty{\eta^2}
+\end{equation}$$</span><!-- Has MathJax -->
+<p>可以看到，存在两个粒子，<span>$\eta$</span><!-- Has MathJax -->代表径向的振动模式，其质量平方为<span>$-2\mu^2&gt;0$</span><!-- Has MathJax -->，<span>$\zeta$</span><!-- Has MathJax -->则是一零质量粒子，代表在轴向转动没有回复力，实际上是连接不同可能真空态的零能量激发。粒子谱的分裂与零质量粒子的出现就是Goldstone机制，这个零质量玻色子也被称为Nambu-Goldstone玻色子。</p>
+<h2><a href="#gui-fan-dui-cheng-xing-de-zi-fa-po-que" class="header-anchor">#</a><span id="gui-fan-dui-cheng-xing-de-zi-fa-po-que">规范对称性的自发破缺</span></h2>
+<p>我们考虑局域规范不变的Lagrange量的自发对称性破缺。比如上一篇所讲的U(1)理论，我们给势能加上一个四次方项：</p>
+<span>$$\begin{equation}
+\mathcal{L}=\vqty{\mathcal{D}^\mu\phi}^2-\mu^2\vqty{\phi}^2-\vqty{\lambda}\pqty{\phi^*\phi}^2-\frac{1}{4}F^{\mu\nu}F_{\mu\nu}
+\end{equation}$$</span><!-- Has MathJax -->
+<p>其中<span>$\phi=\frac{1}{\sqrt{2}}\pqty{\phi_1+i\phi_2}$</span><!-- Has MathJax -->为复标量场，<span>$\mathcal{D}_\mu\equiv\partial_\mu+iqA_\mu$</span><!-- Has MathJax -->，<span>$F_\mu\nu\equiv\partial_\nu A_\mu-\partial_\mu A_\nu$</span><!-- Has MathJax -->。其在局域规范变换下不变：</p>
+<span>$$\begin{equation}
+\begin{aligned} \phi(x)\to\phi&apos;(x)=e^{iq\alpha(x)}\phi(x) \\
+A_\mu(x)\to A&apos;_\mu(x)=A_\mu(x)-\partial_\mu\alpha(x) \end{aligned}
+\end{equation}$$</span><!-- Has MathJax -->
+<p>同样，对于<span>$\mu^2&gt;0$</span><!-- Has MathJax -->，势能最小值在<span>$\phi=0$</span><!-- Has MathJax -->，对称性未被破坏。对于<span>$\mu^2&lt;0$</span><!-- Has MathJax -->，最小值在</p>
+<span>$$\begin{equation}
+\expval{\vqty{\phi}^2}_0=\frac{mu^2}{2\vqty{\lambda}}\equiv\frac{v^2}{2}
+\end{equation}$$</span><!-- Has MathJax -->
+<p>取<span>$\phi&apos;=\phi-\expval{\phi}_0=\phi-\frac{v}{\sqrt{2}}$</span><!-- Has MathJax -->，然后设</p>
+<span>$$\begin{equation}
+\phi=\frac{e^{i\zeta/v}(v+\eta)}{\sqrt{2}}\approx\frac{(v+\eta+i\zeta)}{\sqrt{2}}
+\end{equation}$$</span><!-- Has MathJax -->
+<p>忽略高阶无穷小。则这时Lagrange量的前几项为：</p>
+<span>$$\begin{equation}
+\begin{aligned}
+\mathcal{L}=&amp;\frac{1}{2}\bqty{\pqty{\partial_\mu\eta}\pqty{\partial^\mu\eta}+2\mu^2\eta^2}+\frac{1}{2}\bqty{\pqty{\partial_\mu\zeta}\pqty{\partial^\mu\zeta}} \\&amp;-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}+qvA_\mu\pqty{\partial^\mu\zeta}+\frac{q^2v^2}{2}A_\mu A^\mu+\cdots
+\end{aligned}
+\end{equation}$$</span><!-- Has MathJax -->
+<span>$\eta$</span><!-- Has MathJax -->场像以前一样，获得了<span>$\sqrt{-2\mu^2}$</span><!-- Has MathJax -->的质量，同时<span>$A_\mu$</span><!-- Has MathJax -->也获得了一个质量，但是它是和看起来零质量的<span>$\zeta$</span><!-- Has MathJax -->场混合起来的。事实上，包含<span>$A_\mu$</span><!-- Has MathJax -->与<span>$\zeta$</span><!-- Has MathJax -->的项可以被写成：
+<span>$$\begin{equation}
+\frac{q^2v^2}{2}\pqty{A_\mu+\frac{1}{qv}\partial_\mu\zeta}\pqty{A^\mu+\frac{1}{qv}\partial^\mu\zeta}
+\end{equation}$$</span><!-- Has MathJax -->
+<p>由于拉格朗日量是规范不变的，可以做一个规范变换<span>$A_\mu\to A&apos;_\mu=A_\mu+\frac{1}{qv}\partial_\mu\zeta$</span><!-- Has MathJax -->，对应的<span>$\phi$</span><!-- Has MathJax -->的旋转为<span>$\phi\to\phi&apos;=e^{i\zeta(x)/v}\phi(x)=\frac{v+\eta}{\sqrt{2}}$</span><!-- Has MathJax -->，则原式变成：</p>
+<span>$$\begin{equation}
+\mathcal{L}=\frac{1}{2}\bqty{\pqty{\partial_\mu\eta}\pqty{\partial^\mu\eta}+2\mu^2\eta^2}-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}+\frac{q^2v^2}{2}A&apos;_\mu A&apos;^\mu+\cdots
+\end{equation}$$</span><!-- Has MathJax -->
+<p>可以看出，这里面包含</p>
+<ul>
+<li>一个<span>$\eta$</span><!-- Has MathJax -->场，其质量平方为<span>$-2\mu^2&gt;0$</span><!-- Has MathJax -->；</li>
+<li>一个有质量的矢量场<span>$A&apos;_\mu$</span><!-- Has MathJax -->，其质量为<span>$qv$</span><!-- Has MathJax -->；</li>
+<li>没有<span>$\zeta$</span><!-- Has MathJax -->场。</li>
+</ul>
+<span>$\zeta$</span><!-- Has MathJax -->场消失的自由度哪儿去了呢？从规范变换（这个特殊的规范变换被叫做U-规范）里可以看出，实际上<span>$\zeta$</span><!-- Has MathJax -->场变成了有质量的<span>$A&apos;_\mu$</span><!-- Has MathJax -->场的径向分量。在对称性自发破缺之前，系统有四个自由度：两个标量场<span>$\phi$</span><!-- Has MathJax -->与<span>$\phi&apos;$</span><!-- Has MathJax -->以及零质量向量场<span>$A&apos;_\mu$</span><!-- Has MathJax -->的两个螺旋态。在自发破缺之后，变成了一个标量场<span>$\eta$</span><!-- Has MathJax -->以及<span>$A&apos;_\mu$</span><!-- Has MathJax -->的三个螺旋态。原本零质量的光子“吸收”了零质量的Nambu-Goldstone玻色子，变成了有质量的矢量玻色子。
+<h2><a href="#fei-abel-gui-fan-dui-cheng-xing-de-zi-fa-po-que" class="header-anchor">#</a><span id="fei-abel-gui-fan-dui-cheng-xing-de-zi-fa-po-que">非Abel规范对称性的自发破缺</span></h2>
+<p>书中最后还举了一个非Abel规范对称性自发破缺的例子，用的是SU(2)群，其实大体上和前面的过程差不多，具体过程就不抄了，大概结果就是：</p>
+<span>$$\begin{equation}
+\mathcal{L}=\frac{1}{2}\bqty{\pqty{\partial_\mu\eta}\pqty{\partial^\mu\eta}+2\mu^2\eta^2}-\frac{1}{4}\vb{F}_{\mu\nu}\vdot\vb{F}^{\mu\nu}+\frac{g^2v^2}{2}\pqty{b_\mu^1b^{1\mu}+b_\mu^2b^{2\mu}}+\cdots
+\end{equation}$$</span><!-- Has MathJax -->
+<p>这里面包含</p>
+<ul>
+<li>
+<span>$\eta$</span><!-- Has MathJax -->变成了标量Higgs场，其质量平方为<span>$-2\mu^2&gt;0$</span><!-- Has MathJax -->；
+</li>
+<li>本应是Nambu-Goldstone玻色子的<span>$\zeta_1$</span><!-- Has MathJax -->与<span>$\zeta_2$</span><!-- Has MathJax -->消失了；</li>
+<li>矢量玻色子<span>$b_\mu^1$</span><!-- Has MathJax -->与<span>$b_\mu^2$</span><!-- Has MathJax -->对应破坏了的<span>$T_1$</span><!-- Has MathJax -->与<span>$T_2$</span><!-- Has MathJax -->产生子的对称性，获得了质量<span>$gv$</span><!-- Has MathJax -->；</li>
+<li>剩下的矢量玻色子<span>$b_\mu^3$</span><!-- Has MathJax -->仍然没有质量，代表被破坏之后剩余的一个保持真空不变的产生子<span>$T_3$</span><!-- Has MathJax -->。</li>
+</ul>
+<h2><a href="#higgs-ji-zhi" class="header-anchor">#</a><span id="higgs-ji-zhi">Higgs机制</span></h2>
+<p>其实上面最后两节的内容就是Higgs机制。</p>
+<p>下一篇将会实际上手，讨论电弱统一（SU(2)<span>$\times$</span><!-- Has MathJax -->U(1)规范对称性），以及对应的Higgs机制，Higgs玻色子的产生。</p>
+<p>啊，Higgs机制太漂亮了。</p>
+<link rel="stylesheet" href="/blog/css/spoiler.css" type="text/css"><script src="/blog/js/spoiler.js" type="text/javascript" async></script>
+  </article>
+
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/blog/categories/%E7%89%A9%E7%90%86/">物理</a><a class="nexmoefont icon-appstore-fill -link" href="/blog/categories/%E7%89%A9%E7%90%86/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/blog/tags/%E7%89%A9%E7%90%86/" rel="tag">物理</a> <a class="nexmoefont icon-tag-fill -none-link" href="/blog/tags/%E8%A7%84%E8%8C%83%E5%9C%BA%E8%AE%BA/" rel="tag">规范场论</a> <a class="nexmoefont icon-tag-fill -none-link" href="/blog/tags/%E9%9D%9E%E9%98%BF%E8%B4%9D%E5%B0%94%E8%A7%84%E8%8C%83%E5%9C%BA%E8%AE%BA/" rel="tag">非阿贝尔规范场论</a>
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    
+      
+  <div class="nexmoe-post-copyright">
+    <strong>Author：</strong>小大圣<br>
+    <strong>Link：</strong><a href="https://shedarshian.github.io/blog/%E7%89%A9%E7%90%86/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/gauge2.html" title="https:&#x2F;&#x2F;shedarshian.github.io&#x2F;blog&#x2F;%E7%89%A9%E7%90%86&#x2F;%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&#x2F;gauge2.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;shedarshian.github.io&#x2F;blog&#x2F;%E7%89%A9%E7%90%86&#x2F;%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&#x2F;gauge2.html</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+    
+    <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css">
+<div id="gitalk"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
+<script src="/blog/js/src/md5.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: 'Iv1.d401eaa1fb95895c',
+        clientSecret: 'ef9f6f08a2fb7ca63414802a68c72c70e0f851b8',
+        id: md5(window.location.pathname),
+        repo: 'blog',
+        owner: 'shedarshian',
+        admin: 'shedarshian'
+    })
+    gitalk.render('gitalk')
+</script>
+</section>
+  </div>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--<script src="/blog/js/app.js?v=1624190832653"></script>-->
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({{ JSON.stringify(config) }});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="{{ src }}">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+
+  
+
+
+
+
+
+</body>
+
+</html>
