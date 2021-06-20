@@ -1,5 +1,8 @@
 avatar: https://shedarshian.github.io/blog/images/avatar.jpg #images/avatar.png # 网站 Logo
-background: https://i.loli.net/2019/01/13/5c3aec85a4343.jpg # 既是博客的背景，又是文章默认头图
+background: # 既是博客的背景，又是文章默认头图
+  path: https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg
+  # width: 1440
+  # height: 160
 favicon:
   href: /favicon.ico # 网站图标
   type: image/png # 图标类型，可能的值有(image/png, image/vnd.microsoft.icon, image/x-icon, image/gif)
@@ -8,9 +11,14 @@ function: # 功能开关，可选值（true,false）
   fancybox: true # 灯箱功能
   SmoothScroll: true # 平滑滚动
   pjax: false # Pjax 无刷新加载页面，暂时存在较大问题
+  avatarRotateZ: false # 头像旋转
+  clickHeart: false # 鼠标点击小心心 ♥
+  globalToc: false # 开启该功能会自动开启文章 TOC（文章目录） 功能
   
 # 附加图标库 用于自定义字体 www.iconfont.cn 登录->创建项目->添加图标->获取链接
 iconlib: //at.alicdn.com/t/font_1460233_cqpdeugxv8i.css # //at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css
+
+search: https://cn.bing.com/search?q=site:shedarshian.github.io/blog/
 
 cdn: # 这里可以修改站点使用的库的CDN
   mdui:
@@ -55,6 +63,7 @@ menu:
     - icon-link
 
 widgets:
+- search
 - social
 - category
 - tagcloud
@@ -114,8 +123,8 @@ gitalk:
   admin: shedarshian # 拥有对该repo进行操作的 GitHub username
   owner: shedarshian # 持有该 repo 的 GitHub username
   repo: blog # 存放评论的 issue 所在的 repo
-  clientID: 96ff8c7d8066a1ebd0fd # GitHub Client ID
-  clientSecret: 42396013123437122b3d1b84a9bb686495452e5d # GitHub Client Secret
+  clientID: Iv1.d401eaa1fb95895c # 96ff8c7d8066a1ebd0fd # GitHub Client ID
+  clientSecret: ef9f6f08a2fb7ca63414802a68c72c70e0f851b8 # 42396013123437122b3d1b84a9bb686495452e5d # GitHub Client Secret
 
 gitment:
   owner: nexmoe # 持有该 repo 的 GitHub username

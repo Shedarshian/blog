@@ -1,4 +1,7 @@
 <style>
+  article > *:first-child {
+    margin-top: 0!important;
+  }
   article ul {
     list-style-type: none;
     padding: 0;
@@ -37,7 +40,15 @@
     width: 100%;
     border-radius: 0;
     border: none;
-    height: calc(100% - 30px);
+    display: block;
+  }
+  article ul li img.lazyload {
+    padding-bottom: 100%;
+    opacity: 0;
+  }
+  article ul li img.lazyloaded {
+    padding-bottom: 0;
+    opacity: 1;
   }
   @media screen and (max-width: 768px) {
     article ul li {
@@ -48,7 +59,7 @@
 
 <div class="nexmoe-post">
   <article class="nexmoe-py">
-    <%- page.content %>
+    <%- image_auto_lazyload(page.content) %>
   </article>
   <%- partial('_partial/comment') %>
 </div>

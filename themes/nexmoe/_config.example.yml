@@ -1,35 +1,23 @@
-avatar: /images/avatar.png # 网站 Logo
-background: https://i.loli.net/2019/01/13/5c3aec85a4343.jpg # 既是博客的背景，又是文章默认头图
+avatar: https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/avatar.png # 网站 Logo
+background: # 既是博客的背景，又是文章默认头图
+  path: https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg
+  width: 1440
+  height: 960
 favicon:
   href: /favicon.ico # 网站图标
   type: image/png # 图标类型，可能的值有(image/png, image/vnd.microsoft.icon, image/x-icon, image/gif)
 
 function: # 功能开关，可选值（true,false）
-  fancybox: true # 灯箱功能
-  SmoothScroll: true # 平滑滚动
-  pjax: false # Pjax 无刷新加载页面，暂时存在较大问题
+  avatarRotateZ: false # 头像旋转
+  clickHeart: false # 鼠标点击小心心 ♥
+  globalToc: false # 开启该功能会自动开启文章 TOC（文章目录） 功能
   
 # 附加图标库 用于自定义字体 www.iconfont.cn 登录->创建项目->添加图标->获取链接
 iconlib: # //at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css
 
+search: https://cn.bing.com/search?q=site:nexmoe.com # https://www.google.com/search?q={你的博客链接}
+
 cdn: # 这里可以修改站点使用的库的CDN
-  mdui:
-    css: https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css
-    js: https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js
-  jquery:
-    js: https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js
-  fancybox:
-    css: https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css
-    js: https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js
-  SmoothScroll:
-    js: https://cdn.jsdelivr.net/npm/smoothscroll-for-websites@1.4.9/SmoothScroll.min.js
-  pjax:
-    js: //cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js
-  lazysizes:
-    js: https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js
-  highlight:
-    css: https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css
-    js: https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js
   disqusjs: 
     css: https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqusjs.min.css
     js: https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqus.min.js
@@ -54,6 +42,7 @@ menu:
     - /PY.html
 
 widgets:
+- search
 - social
 - category
 - tagcloud
