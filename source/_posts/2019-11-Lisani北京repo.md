@@ -8,6 +8,8 @@ tags:
   - スフィア
   - live
 cover: 'https://shedarshian.github.io/blog/live/repo/Lisani-repo/lisani.jpg'
+coverWidth: 1440
+coverHeight: 960
 date: 2019-11-14 21:30:47
 ---
 

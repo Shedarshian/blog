@@ -68,6 +68,7 @@ Latex宏包我直接放ctan的链接了，里面点`Package documentation`直接
 ### python module
 
 + [Python documentation](https://docs.python.org/3/) python的官方文档，查内置库的时候很常用（还没完整的读过一遍），有中文但是这个中文现在的版本有点像机翻，没有C++的翻的好
++ [six](https://six.readthedocs.io/) 用于py2与py3兼容的库
 + [Wand](http://docs.wand-py.org/en/latest/) 一个图片处理库
 + [Pillow](https://pillow.readthedocs.io/en/stable/installation.html) 另一个更好用的图片处理库
 + [NumPy](https://numpy.org/) 数值运算库
@@ -117,11 +118,13 @@ Latex宏包我直接放ctan的链接了，里面点`Package documentation`直接
 
 ### 其他ACG
 
++ [魔法禁书目录维基](https://toaru.huijiwiki.com/wiki/%E9%A6%96%E9%A1%B5)
 + [Elsanna档案室](http://www.cp4ever.com/)
 
 ### 社群
 
 + 友链 <font size=5>**[北航飞梦ACG联盟](http://buaaacg.org/)**</font>
++ 友链 [蘑菇的日记本](http://blog.uxie.tech/)
 
 ### 其他资源检索的网站
 

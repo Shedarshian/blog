@@ -8,6 +8,8 @@ categories:
   - - live
     - repo
 cover: https://shedarshian.github.io/blog/live/repo/A10tion-repo/orix.jpg #https://i.loli.net/2019/10/10/Z9PIH1Mt357ziso.jpg
+coverWidth: 1440
+coverHeight: 960
 date: 2019-10-10 20:19:02
 ---
 
