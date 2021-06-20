@@ -90,7 +90,7 @@ theme: nexmoe
 deploy:
   type: git
   repo: https://github.com/Shedarshian/blog.git
-  branch: gh-pages
+  branch: master
 
 math:
   engine: 'mathjax' # or 'katex'
