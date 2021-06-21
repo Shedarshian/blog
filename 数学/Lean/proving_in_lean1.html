@@ -12,15 +12,15 @@
   
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
-  <meta name="description" content="一时兴起，想尝试翻译一下《Theorem Proving in Lean》。Lean是一个计算机辅助进行数学证明的语言，我接触到了就觉得十分有意思。初学者十分推荐先游玩自然数游戏（虽然没翻译）。本文是Lean语言的入门教程。    引言  计算机与定理证明 关于Lean 关于本书 鸣谢      #引言 #计算机与定理证明 形式化验证是一种使用逻辑推理和计算，去推导用精准的数学术语表达的断言的方法">
+  <meta name="description" content="一时兴起，想尝试翻译一下《Theorem Proving in Lean》。Lean是一个计算机辅助进行数学证明的语言，我接触到了就觉得十分有意思。初学者十分推荐先游玩自然数游戏（虽然没翻译）。本文是Lean语言的入门教程。    引言  计算机与定理证明 关于Lean 关于本书 鸣谢      引言 计算机与定理证明 形式化验证是一种使用逻辑推理和计算，去推导用精准的数学术语表达的断言的方法。他">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在Lean中证明定理·1.引言">
 <meta property="og:url" content="https://shedarshian.github.io/blog/%E6%95%B0%E5%AD%A6/Lean/proving_in_lean1.html">
 <meta property="og:site_name" content="石尾台聖の記憶空間">
-<meta property="og:description" content="一时兴起，想尝试翻译一下《Theorem Proving in Lean》。Lean是一个计算机辅助进行数学证明的语言，我接触到了就觉得十分有意思。初学者十分推荐先游玩自然数游戏（虽然没翻译）。本文是Lean语言的入门教程。    引言  计算机与定理证明 关于Lean 关于本书 鸣谢      #引言 #计算机与定理证明 形式化验证是一种使用逻辑推理和计算，去推导用精准的数学术语表达的断言的方法">
+<meta property="og:description" content="一时兴起，想尝试翻译一下《Theorem Proving in Lean》。Lean是一个计算机辅助进行数学证明的语言，我接触到了就觉得十分有意思。初学者十分推荐先游玩自然数游戏（虽然没翻译）。本文是Lean语言的入门教程。    引言  计算机与定理证明 关于Lean 关于本书 鸣谢      引言 计算机与定理证明 形式化验证是一种使用逻辑推理和计算，去推导用精准的数学术语表达的断言的方法。他">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-06-21T05:44:46.000Z">
-<meta property="article:modified_time" content="2021-06-21T05:44:58.892Z">
+<meta property="article:modified_time" content="2021-06-21T05:47:42.564Z">
 <meta property="article:author" content="小大圣">
 <meta property="article:tag" content="数学">
 <meta property="article:tag" content="证明">
@@ -29,7 +29,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1460233_cqpdeugxv8i.css">
   
-  <!--<link rel="stylesheet" href="/blog/css/style.css?v=1624254309817">-->
+  <!--<link rel="stylesheet" href="/blog/css/style.css?v=1624254466191">-->
 
   
 <meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
@@ -293,6 +293,7 @@
 <p>目前，使用Lean有两种方式。第一种是使用Lean在线编辑器。在使用它的时候，你的浏览器会自动下载一个Javascript版本的Lean，一个包含定义和定理的标准库，以及一个编辑器。这提供了一个方便的快速上手的机会。</p>
 <p>第二个方式则是将Lean安装到你的电脑上运行。这比在线版要快上许多，而且也更灵活。Visual Studio Code（简称VS Code）和Emacs里的特殊模式为书写和调试证明提供了强有力的帮助，也就更适合严肃的用途。Lean的源码和安装指南可以从<a target="_blank" rel="noopener" href="https://github.com/leanprover/lean/">这里</a>获取。</p>
 <p>本教程描述的是当前版本的Lean，也就是Lean 3。一个老版本Lean 2，对同伦类型论（HoTT）有着特殊支持。在<a target="_blank" rel="noopener" href="https://github.com/leanprover/lean2/">这里</a>你可以找到Lean 2和HoTT库。Lean 2的教程则在<a target="_blank" rel="noopener" href="https://leanprover.github.io/tutorial/">这里</a>。</p>
+<span id="more"></span>
 <h2><a href="#guan-yu-ben-shu" class="header-anchor">#</a><span id="guan-yu-ben-shu">关于本书</span></h2>
 <p>本书的目标是教你如何使用Lean来书写和验证证明。本书很多的背景知识都不止局限于Lean。我们会从解释Lean所基于的逻辑系统开始。这是一种版本的<strong>依赖类型论</strong>，它强大到足够以自然的方式证明几乎所有传统的数学定理。特别地，Lean是基于一个包含<strong>递归类型</strong><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>的<strong>Calculus of Constructions</strong><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>系统。我们不止会讲解在依赖类型论中如何定义数学对象和描述数学表达式，也会讲解如何作为一种语言来使用它书写证明。</p>
 <p>由于详细的公理化证明过于复杂，定理证明的一大挑战则是如何让计算机填补尽可能多的细节。我们会讲解一些方法来支持这一点。例如，我们会讨论项的重写，以及Lean用来自动简化项和表达式的方法。类似地，我们也会讨论<strong>细化</strong><!--？-->与<strong>类型推导</strong>的方法。它们可以用来支持许多自由形式的代数推导。</p>
@@ -360,7 +361,7 @@
   </div>
   <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<!--<script src="/blog/js/app.js?v=1624254309822"></script>-->
+<!--<script src="/blog/js/app.js?v=1624254466200"></script>-->
 
 
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
