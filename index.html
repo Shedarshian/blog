@@ -25,7 +25,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1460233_cqpdeugxv8i.css">
   
-  <!--<link rel="stylesheet" href="/blog/css/style.css?v=1635064430748">-->
+  <!--<link rel="stylesheet" href="/blog/css/style.css?v=1635166520248">-->
 
   
 <meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
@@ -256,7 +256,7 @@
 
         <div class="nexmoe-post-meta nexmoe-rainbow">
             <a><i class="nexmoefont icon-calendar-fill"></i>2021年10月24日</a>
-            <a><i class="nexmoefont icon-areachart"></i>958 字</a>
+            <a><i class="nexmoefont icon-areachart"></i>980 字</a>
             <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
         </div>
 
@@ -280,25 +280,25 @@
 <li>$d(x,y)=d(y,x)$,</li>
 <li>$d(x,y)\leq d(x,z)+d(z,y)$.</li>
 </ol>
-<p>附加了度量的集合叫做度量空间。我们要考虑的基本上是<strong>域</strong>：有加法和乘法，加法成交换群，非零元素对乘法成交换群，以及分配律成立。例如$\mathbb{Q}$与$\mathbb{R}$。在域上，另一个相关的概念是<strong>范数</strong>，范数是一个域F到非负实数上的一元函数$|x|$，满足：</p>
+<p>附加了度量的集合叫做度量空间。我们要考虑的基本上是<strong>域</strong>：有加法和乘法，加法成交换群，非零元素对乘法成交换群，以及分配律成立。例如$\mathbb{Q}$与$\mathbb{R}$。在域上，另一个相关的概念是<strong>范数</strong>，范数是一个域F到非负实数上的一元函数$||x||$，满足：</p>
 <ol>
-<li>$|x|=0\Leftrightarrow x=0$,</li>
-<li>$|x\cdot y|=|x|\cdot |y|$,</li>
-<li>$|x+y|\leq|x|+|y|$.</li>
+<li>$||x||=0\Leftrightarrow x=0$,</li>
+<li>$||x\cdot y||=||x||\cdot ||y||$,</li>
+<li>$||x+y||\leq||x||+||y||$.</li>
 </ol>
-<p>一个范数可以导出一个度量：$d(x,y)=|x-y|$。域上的范数的一个例子是$\mathbb{Q}$上的函数$|x|$。其导出的度量$d(x,y)=|x-y|$则是通常意义上的距离。</p>
+<p>一个范数可以导出一个度量：$d(x,y)=||x-y||$。域上的范数的一个例子是$\mathbb{Q}$上的函数$|x|$。其导出的度量$d(x,y)=|x-y|$则是通常意义上的距离。</p>
 <h1>$\mathbb{Q}_p$度量</h1>
 <p>通常意义上的距离是一种度量，那么$\mathbb{Q}$上还有没有其他度量呢？</p>
-<p>令$p$是任一素数。对于非零整数$a$，定义$ord_pa$为能整除$a$的$p$的最高幂次，也就是使得$p^m|a$的最大的$m$。例如$ord_5 35=1$。约定$ord_p 0=\infty$。</p>
-<p>对于任一有理数$x=a/b$，定义$ord_px=ord_pa-ord_pb$。定义$\mathbb{Q}$上的函数$|\ |_p$如下：</p>
+<p>令$p$是任一素数。对于非零整数$a$，定义$\mathrm{ord}_pa$为能整除$a$的$p$的最高幂次，也就是使得$p^m|a$的最大的$m$。例如$ord_5 35=1$。约定$\mathrm{ord}_p 0=\infty$。</p>
+<p>对于任一有理数$x=a/b$，定义$\mathrm{ord}_px=\mathrm{ord}_pa-\mathrm{ord}_pb$。定义$\mathbb{Q}$上的函数$|\ |_p$如下：</p>
 <p>$$<br>
 |x|_p=\begin{cases}<br>
-\frac{1}{p^{ord_px}},&amp;\mathrm{if\ }x\neq 0, \<br>
+\frac{1}{p^{\mathrm{ord}_px}},&amp;\mathrm{if\ }x\neq 0, \<br>
 0,&amp;\mathrm{if\ }x=0.<br>
 \end{cases}<br>
 $$</p>
 <p>可证得$|\ |_p$是一范数。事实上，这个范数满足比三角不等式更强的条件。</p>
-<p>若范数满足$|x+y|\leq\max(|x|,|y|)$，则称作非阿基米德范数。对于度量，<strong>非阿基米德度量</strong>为满足$d(x,y)\leq\max(d(x,z),d(z,y))$的度量。普通的绝对值范数则是阿基米德的。</p>
+<p>若范数满足$||x+y||\leq\max(||x||,||y||)$，则称作非阿基米德范数。对于度量，<strong>非阿基米德度量</strong>为满足$d(x,y)\leq\max(d(x,z),d(z,y))$的度量。普通的绝对值范数则是阿基米德的。</p>
             
         </article>
     </div>
@@ -688,7 +688,7 @@ A_{im}^{GR0} | 引力能力 | -->
   </div>
   <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<!--<script src="/blog/js/app.js?v=1635064430754"></script>-->
+<!--<script src="/blog/js/app.js?v=1635166520256"></script>-->
 
 
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>

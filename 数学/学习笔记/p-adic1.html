@@ -20,7 +20,7 @@
 <meta property="og:description" content="新坑笔记，p-adic数    基本概念 $\mathbb{Q}_p$度量 $\mathbb{Q}$上的所有度量 非阿基米德度量    基本概念 在一个集合上的度量是一个集合X到非负实数上的二元函数$d(x,y)$，满足以下三个条件：  $d(x,y)&#x3D;0\Leftrightarrow x&#x3D;y$, $d(x,y)&#x3D;d(y,x)$, $d(x,y)\leq d(x,z)+d(z,y)$.  附加了度">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-10-24T08:27:07.000Z">
-<meta property="article:modified_time" content="2021-10-24T08:33:46.486Z">
+<meta property="article:modified_time" content="2021-10-25T12:54:49.361Z">
 <meta property="article:author" content="小大圣">
 <meta property="article:tag" content="数学">
 <meta property="article:tag" content="代数">
@@ -29,7 +29,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1460233_cqpdeugxv8i.css">
   
-  <!--<link rel="stylesheet" href="/blog/css/style.css?v=1635064430374">-->
+  <!--<link rel="stylesheet" href="/blog/css/style.css?v=1635166520004">-->
 
   
 <meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
@@ -256,7 +256,7 @@
   
   <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
     <a><i class="nexmoefont icon-calendar-fill"></i>2021年10月24日</a>
-    <a><i class="nexmoefont icon-areachart"></i>958 字</a>
+    <a><i class="nexmoefont icon-areachart"></i>980 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
 </div>
 
@@ -283,33 +283,33 @@
 <li>$d(x,y)=d(y,x)$,</li>
 <li>$d(x,y)\leq d(x,z)+d(z,y)$.</li>
 </ol>
-<p>附加了度量的集合叫做度量空间。我们要考虑的基本上是<strong>域</strong>：有加法和乘法，加法成交换群，非零元素对乘法成交换群，以及分配律成立。例如$\mathbb{Q}$与$\mathbb{R}$。在域上，另一个相关的概念是<strong>范数</strong>，范数是一个域F到非负实数上的一元函数$|x|$，满足：</p>
+<p>附加了度量的集合叫做度量空间。我们要考虑的基本上是<strong>域</strong>：有加法和乘法，加法成交换群，非零元素对乘法成交换群，以及分配律成立。例如$\mathbb{Q}$与$\mathbb{R}$。在域上，另一个相关的概念是<strong>范数</strong>，范数是一个域F到非负实数上的一元函数$||x||$，满足：</p>
 <ol>
-<li>$|x|=0\Leftrightarrow x=0$,</li>
-<li>$|x\cdot y|=|x|\cdot |y|$,</li>
-<li>$|x+y|\leq|x|+|y|$.</li>
+<li>$||x||=0\Leftrightarrow x=0$,</li>
+<li>$||x\cdot y||=||x||\cdot ||y||$,</li>
+<li>$||x+y||\leq||x||+||y||$.</li>
 </ol>
-<p>一个范数可以导出一个度量：$d(x,y)=|x-y|$。域上的范数的一个例子是$\mathbb{Q}$上的函数$|x|$。其导出的度量$d(x,y)=|x-y|$则是通常意义上的距离。</p>
+<p>一个范数可以导出一个度量：$d(x,y)=||x-y||$。域上的范数的一个例子是$\mathbb{Q}$上的函数$|x|$。其导出的度量$d(x,y)=|x-y|$则是通常意义上的距离。</p>
 <h1><a href="#mathbb-q-p-du-liang" class="header-anchor">#</a><span id="mathbb-q-p-du-liang">$\mathbb{Q}_p$度量</span></h1>
 <p>通常意义上的距离是一种度量，那么$\mathbb{Q}$上还有没有其他度量呢？</p>
-<p>令$p$是任一素数。对于非零整数$a$，定义$ord_pa$为能整除$a$的$p$的最高幂次，也就是使得$p^m|a$的最大的$m$。例如$ord_5 35=1$。约定$ord_p 0=\infty$。</p>
-<p>对于任一有理数$x=a/b$，定义$ord_px=ord_pa-ord_pb$。定义$\mathbb{Q}$上的函数$|\ |_p$如下：</p>
+<p>令$p$是任一素数。对于非零整数$a$，定义$\mathrm{ord}_pa$为能整除$a$的$p$的最高幂次，也就是使得$p^m|a$的最大的$m$。例如$ord_5 35=1$。约定$\mathrm{ord}_p 0=\infty$。</p>
+<p>对于任一有理数$x=a/b$，定义$\mathrm{ord}_px=\mathrm{ord}_pa-\mathrm{ord}_pb$。定义$\mathbb{Q}$上的函数$|\ |_p$如下：</p>
 <p>$$<br>
 |x|_p=\begin{cases}<br>
-\frac{1}{p^{ord_px}},&amp;\mathrm{if\ }x\neq 0, \<br>
+\frac{1}{p^{\mathrm{ord}_px}},&amp;\mathrm{if\ }x\neq 0, \<br>
 0,&amp;\mathrm{if\ }x=0.<br>
 \end{cases}<br>
 $$</p>
 <p>可证得$|\ |_p$是一范数。事实上，这个范数满足比三角不等式更强的条件。</p>
-<p>若范数满足$|x+y|\leq\max(|x|,|y|)$，则称作非阿基米德范数。对于度量，<strong>非阿基米德度量</strong>为满足$d(x,y)\leq\max(d(x,z),d(z,y))$的度量。普通的绝对值范数则是阿基米德的。</p>
+<p>若范数满足$||x+y||\leq\max(||x||,||y||)$，则称作非阿基米德范数。对于度量，<strong>非阿基米德度量</strong>为满足$d(x,y)\leq\max(d(x,z),d(z,y))$的度量。普通的绝对值范数则是阿基米德的。</p>
 <span id="more"></span>
 <h1><a href="#mathbb-q-shang-de-suo-you-du-liang" class="header-anchor">#</a><span id="mathbb-q-shang-de-suo-you-du-liang">$\mathbb{Q}$上的所有度量</span></h1>
-<p>对于任何一个度量空间，我们有<strong>柯西列</strong>的概念：一个点列${a_1,a_2,\dotx,a_n}$是柯西列定义为对任意$\epsilon&gt;0$，都存在$N$，使得对任意$n,m&gt;N$有$d(a_m,a_n)&lt;\epsilon$。如果在度量$d_1$下的任何一个柯西列在度量$d_2$下仍是柯西列，则我们称这两个度量是<strong>等价的</strong>。如果两个范数导出的度量是等价的，则我们称这两个范数是等价的。</p>
-<p>在定义$|\ |<em>p$中，我们可以将$(1/p)<sup>{ord_px}$换成任意的$\rho</sup>{ord_px}$，只要$0&lt;\rho&lt;1$，则换之后的范数仍是等价的。同样，当$0&lt;\alpha\leq 1$时，普通的绝对值$|\ |$和$|\ |^\alpha$也是等价的。我们有时将$|\ |$写作$|\ |</em>\infty$。</p>
-<p>定理（Ostrowski）：$\mathbb{Q}$上的每个非平凡度量都等价于$|\ |_p$，其中$p$是一个素数或是$\infty$。（平凡度量是$|0|=0,|x|=1(x\neq 0)$。）</p>
+<p>对于任何一个度量空间，我们有<strong>柯西列</strong>的概念：一个点列${a_1,a_2,\dots,a_n}$是柯西列定义为对任意$\epsilon&gt;0$，都存在$N$，使得对任意$n,m&gt;N$有$d(a_m,a_n)&lt;\epsilon$。如果在度量$d_1$下的任何一个柯西列在度量$d_2$下仍是柯西列，则我们称这两个度量是<strong>等价的</strong>。如果两个范数导出的度量是等价的，则我们称这两个范数是等价的。</p>
+<p>在定义$|\ |\sb{p}$中，我们可以将$(1/p)<sup>{\mathrm{ord}\sb{p}x}$换成任意的$\rho</sup>{\mathrm{ord}\sb{p}x}$，只要$0&lt;\rho&lt;1$，则换之后的范数仍是等价的。同样，当$0&lt;\alpha\leq 1$时，普通的绝对值$|\ |$和$|\ |^\alpha$也是等价的。我们有时将$|\ |$写作$|\ |_\infty$。</p>
+<p>定理（Ostrowski）：$\mathbb{Q}$上的每个非平凡度量都等价于$|\ |_p$，其中$p$是一个素数或是$\infty$。（平凡度量是$||0||=0,||x||=1(x\neq 0)$。）</p>
 <p>证明太长不写了。</p>
 <h1><a href="#fei-a-ji-mi-de-du-liang" class="header-anchor">#</a><span id="fei-a-ji-mi-de-du-liang">非阿基米德度量</span></h1>
-<p>那我们来看看这个所谓的“非阿基米德度量”。三角不等式$|x+y|\leq|x|+|y|$告诉我们两边之和大于第三边。那么对于非阿基米德范数，$|x-y|\leq\max(|x|,|y|)$。假设这个三角形的两边$|x|&lt;|y|$，那么$|x-y|\leq|y|$。但是$|y|=|x-(x-y)|\leq\max(|x|,|x-y|)$，由于$|y|$不能小于$|x|$，只能$|y|\leq|x-y|$。这说明$|x-y|=|y|$！当三角形的两边不相等的时候，它的第三边一定和这两边中长的那边相等，也就是所有三角形都是等腰三角形！</p>
+<p>那我们来看看这个所谓的“非阿基米德度量”。三角不等式$||x+y||\leq||x||+||y||$告诉我们两边之和大于第三边。那么对于非阿基米德范数，$||x-y||\leq\max(||x||,||y||)$。假设这个三角形的两边$||x||&lt;||y||$，那么$||x-y||\leq||y||$。但是$||y||=||x-(x-y)||\leq\max(||x||,||x-y||)$，由于$||y||$不能小于$||x||$，只能$||y||\leq||x-y||$。这说明$||x-y||=||y||$！当三角形的两边不相等的时候，它的第三边一定和这两边中长的那边相等，也就是所有三角形都是等腰三角形！</p>
 <p>对于之前的例子，$\mathbb{Q}$上的$|\ |_p$来讲，这应该不是很惊讶，如果$x$和$y$能被$p$的不同次方整除，那么$x-y$就刚好能被这两个当中<strong>较低</strong>的次方整除。</p>
 <link rel="stylesheet" href="/blog/css/spoiler.css" type="text/css"><script src="/blog/js/spoiler.js" type="text/javascript" async></script>
   </article>
@@ -359,7 +359,7 @@ $$</p>
   </div>
   <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<!--<script src="/blog/js/app.js?v=1635064430384"></script>-->
+<!--<script src="/blog/js/app.js?v=1635166520011"></script>-->
 
 
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
