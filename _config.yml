@@ -78,14 +78,15 @@ pagination_dir: page
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
-# plugins:
+plugins:
 #  - hexo-math
-#  - hexo-spoiler # {% spoiler_inline [text] %}
-#  - hexo-sliding-spoiler # {% spoiler "title" %} {% endspoiler %}
-#  - hexo-tag-bilibili # {% bilibili [av_id] [page] %}
-#  - hexo-tag-qrcode # {% qrcode data [alt:text] [title:text] [class] %}
-#  - hexo-tag-hint # {% hint 'body_text' 'hint_text' %}
-#  - hexo-toc # <!-- toc -->
+ - hexo-filter-mathjax
+ - hexo-spoiler # {% spoiler_inline [text] %}
+ - hexo-sliding-spoiler # {% spoiler "title" %} {% endspoiler %}
+ - hexo-tag-bilibili # {% bilibili [av_id] [page] %}
+ - hexo-tag-qrcode # {% qrcode data [alt:text] [title:text] [class] %}
+ - hexo-tag-hint # {% hint 'body_text' 'hint_text' %}
+ - hexo-toc # <!-- toc -->
 #  https://github.com/markdown-it/markdown-it
 ## Themes: https://hexo.io/themes/
 theme: nexmoe
@@ -99,7 +100,9 @@ deploy:
 
 math:
   engine: 'mathjax' # or 'katex'
+  every_page: true
   mathjax:
+    enable: false
     src: https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js
     config:
       # MathJax config
@@ -139,3 +142,27 @@ markdown:
     - markdown-it-footnote
     - markdown-it-sub
     - markdown-it-sup
+
+mathjax:
+  tags: ams # or 'ams' or 'all'
+  single_dollars: true # enable single dollar signs as in-line math delimiters
+  cjk_width: 0.9 # relative CJK char width
+  normal_width: 0.6 # relative normal (monospace) width
+  append_css: true # add CSS to pages rendered by MathJax
+  every_page: false # if true, every page will be rendered by MathJax regardless the `mathjax` setting in Front-matter
+  packages: # extra packages to load
+    - tex2jax
+    - AMSmath
+    - AMSsymbols
+    - physics
+  extension_options: {
+    macros: {
+      bm: ["\\boldsymbol{#1}", 1]
+    }
+  }
+    # you can put your extension options here
+    # see http://docs.mathjax.org/en/latest/options/input/tex.html#tex-extension-options for more detail
+
+pandoc:
+  pandoc_path: D:/Program Files/Pandoc/pandoc.exe
+
