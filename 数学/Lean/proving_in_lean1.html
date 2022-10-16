@@ -12,12 +12,12 @@
   
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
-  <meta name="description" content="一时兴起，想尝试翻译一下《Theorem Proving in Lean》。Lean是一个计算机辅助进行数学证明的语言，我接触到了就觉得十分有意思。初学者十分推荐先游玩自然数游戏（虽然没翻译）。本文是Lean语言的入门教程。    引言  计算机与定理证明 关于Lean 关于本书 鸣谢      引言 计算机与定理证明 形式化验证是一种使用逻辑推理和计算，去推导用精准的数学术语表达的断言的方法。他">
+  <meta name="description" content="一时兴起，想尝试翻译一下《Theorem Proving in Lean》。Lean是一个计算机辅助进行数学证明的语言，我接触到了就觉得十分有意思。初学者十分推荐先游玩自然数游戏（虽然没翻译）。本文是Lean语言的入门教程。      引言  计算机与定理证明 关于Lean 关于本书 鸣谢       引言 计算机与定理证明 形式化验证是一种使用逻辑推理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在Lean中证明定理·1.引言">
 <meta property="og:url" content="https://shedarshian.github.io/blog/%E6%95%B0%E5%AD%A6/Lean/proving_in_lean1.html">
 <meta property="og:site_name" content="石尾台聖の記憶空間">
-<meta property="og:description" content="一时兴起，想尝试翻译一下《Theorem Proving in Lean》。Lean是一个计算机辅助进行数学证明的语言，我接触到了就觉得十分有意思。初学者十分推荐先游玩自然数游戏（虽然没翻译）。本文是Lean语言的入门教程。    引言  计算机与定理证明 关于Lean 关于本书 鸣谢      引言 计算机与定理证明 形式化验证是一种使用逻辑推理和计算，去推导用精准的数学术语表达的断言的方法。他">
+<meta property="og:description" content="一时兴起，想尝试翻译一下《Theorem Proving in Lean》。Lean是一个计算机辅助进行数学证明的语言，我接触到了就觉得十分有意思。初学者十分推荐先游玩自然数游戏（虽然没翻译）。本文是Lean语言的入门教程。      引言  计算机与定理证明 关于Lean 关于本书 鸣谢       引言 计算机与定理证明 形式化验证是一种使用逻辑推理">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-06-21T05:44:46.000Z">
 <meta property="article:modified_time" content="2021-06-21T05:47:42.564Z">
@@ -29,10 +29,42 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1460233_cqpdeugxv8i.css">
   
-  <!--<link rel="stylesheet" href="/blog/css/style.css?v=1648211533673">-->
+  <!--<link rel="stylesheet" href="/blog/css/style.css?v=1665927895061">-->
 
   
-<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><style type="text/css">
+.spoiler {
+  display: inline-flex;
+}
+p.spoiler {
+  display: flex;
+}
+.spoiler a {
+  pointer-events: none;
+}
+.spoiler-blur, .spoiler-blur > * {
+  transition: text-shadow .5s ease;
+}
+.spoiler .spoiler-blur, .spoiler .spoiler-blur > * {
+  color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+  text-shadow: 0 0 10px grey;
+  cursor: pointer;
+}
+.spoiler .spoiler-blur:hover, .spoiler .spoiler-blur:hover > * {
+  text-shadow: 0 0 5px grey;
+}
+.spoiler-box, .spoiler-box > * {
+  transition: color .5s ease,
+  background-color .5s ease;
+}
+.spoiler .spoiler-box, .spoiler .spoiler-box > * {
+  color: black;
+  background-color: black;
+  text-shadow: none;
+}</style><meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body class="mdui-drawer-body-left">
   
@@ -272,8 +304,12 @@
   </div>
 
   <article>
-    <link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.2.1/css/hint.min.css"><p>一时兴起，想尝试翻译一下《<a target="_blank" rel="noopener" href="https://leanprover.github.io/theorem_proving_in_lean/introduction.html">Theorem Proving in Lean</a>》。Lean是一个计算机辅助进行数学证明的语言，我接触到了就觉得十分有意思。初学者十分推荐先游玩<a target="_blank" rel="noopener" href="https://www.ma.imperial.ac.uk/~buzzard/xena/natural_number_game/">自然数游戏</a>（虽然没翻译）。本文是Lean语言的入门教程。</p>
-<div class="toc">
+    <link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.2.1/css/hint.min.css"><p>一时兴起，想尝试翻译一下《<a target="_blank" rel="noopener" href="https://leanprover.github.io/theorem_proving_in_lean/introduction.html">Theorem
+Proving in
+Lean</a>》。Lean是一个计算机辅助进行数学证明的语言，我接触到了就觉得十分有意思。初学者十分推荐先游玩<a target="_blank" rel="noopener" href="https://www.ma.imperial.ac.uk/~buzzard/xena/natural_number_game/">自然数游戏</a>（虽然没翻译）。本文是Lean语言的入门教程。</p>
+<div class="tocStart">
+
+</div>
 <!-- toc -->
 <ul>
 <li><a href="#yin-yan">引言</a>
@@ -282,27 +318,37 @@
 <li><a href="#guan-yu-lean">关于Lean</a></li>
 <li><a href="#guan-yu-ben-shu">关于本书</a></li>
 <li><a href="#ming-xie">鸣谢</a></li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <!-- tocstop -->
+<div class="tocEnd">
+
 </div>
 <h1><a href="#yin-yan" class="header-anchor">#</a><span id="yin-yan">引言</span></h1>
 <h2><a href="#ji-suan-ji-yu-ding-li-zheng-ming" class="header-anchor">#</a><span id="ji-suan-ji-yu-ding-li-zheng-ming">计算机与定理证明</span></h2>
 <p><strong>形式化验证</strong>是一种使用逻辑推理和计算，去推导用精准的数学术语表达的断言的方法。他们可能包括通常的数学定理，也可能并非通常的数学定理，例如声称一块硬件、一份软件、一条网络协议、或是机械系统、混合系统等等的系统满足所需的标准。在实践上，验证一条数学定理和验证系统的正确性之间并没有很尖锐的分隔线——形式化验证需要使用数学术语描述硬件与软件系统，验证它们的正确性在形式上就可以归结为证明一条定理。相反，证明一条数学定理可能需要冗长的计算，验证证明的正确性就需要验证这一计算过程是否做了它应该做的：也就是系统的正确性。</p>
 <p>而支持一条断言的黄金法则就是提供一份证明。20世纪以来逻辑学的发展表明，大部分——如果不是全部——传统的证明方法可以被归结为在任何一个形式体系下很少的几条公理与法则。那么，计算机想要在这里辅助，就有两种方法：一是干脆用计算机来寻找定理的证明方式，二是用计算机帮助验证一个所谓的“证明”是否正确。</p>
-<p><strong>自动定理证明</strong>就专注于“寻找”这一方面。诸如消解式定理证明、tableau定理证明、快速可满足性求解器等等的工具为我们提供了使用命题逻辑和一阶逻辑来证明公式的方法。其他也有许多系统提供了在特定语言或领域内搜索或是决策的流程，例如整数上或是实数上的线性或非线性表达式。像SMT（satisfiability modulo theories，可满足性模理论）一样的架构，结合了通用领域的搜索方法与专用领域的流程。计算机代数系统和特化的数学软件包也为数学计算、建立上下界、或是寻找数学对象提供了工具。当然，数学计算也可以被视为证明的一种，而上面所说的系统，也同样可以帮助建立数学证明。</p>
+<p><strong>自动定理证明</strong>就专注于“寻找”这一方面。诸如消解式定理证明、tableau定理证明、快速可满足性求解器等等的工具为我们提供了使用命题逻辑和一阶逻辑来证明公式的方法。其他也有许多系统提供了在特定语言或领域内搜索或是决策的流程，例如整数上或是实数上的线性或非线性表达式。像SMT（satisfiability
+modulo
+theories，可满足性模理论）一样的架构，结合了通用领域的搜索方法与专用领域的流程。计算机代数系统和特化的数学软件包也为数学计算、建立上下界、或是寻找数学对象提供了工具。当然，数学计算也可以被视为证明的一种，而上面所说的系统，也同样可以帮助建立数学证明。</p>
 <p>自动推理系统则争取的是能力与效率，而通常忽略了严谨性。这样的系统可能出错，也很难保证它们的结果是正确的。另一方面，<strong>交互式定理证明</strong>则专注于“验证”这一方面。它要求每一句断言都伴随着一个正确的、由公理支持的证明。这就给证明设定了很高的标准：每一条推理和每一步计算都要有之前所建立的定义或是定理的支持，直到最基本的公理和规则。事实上，大部分这样的系统都提供了充分建立好的“证明对象”，以建立系统与系统之间的联系，保证不同的系统之间可以独立地检查正确性。通常，建立这样的证明需要用户输入和交互更多的信息，但是它也让我们可以建立更深也更复杂的证明过程。</p>
-<p><strong>Lean Theorem Prover</strong>的目标则是填补交互性定理证明与自动化定理证明之间的空白。Lean在框架下，提供了一定程度上自动化的工具和方法，来支持用户的交互以及严谨的公理化证明。它的目标是同时支持数学上的推理，以及复杂系统的推理，在这两个领域都可以验证证明的正确性。</p>
+<p><strong>Lean Theorem
+Prover</strong>的目标则是填补交互性定理证明与自动化定理证明之间的空白。Lean在框架下，提供了一定程度上自动化的工具和方法，来支持用户的交互以及严谨的公理化证明。它的目标是同时支持数学上的推理，以及复杂系统的推理，在这两个领域都可以验证证明的正确性。</p>
 <p>Lean的底层逻辑包含计算性的解释，它可以被看做一种编程语言。也就是说，它可以被看做一个使用精确语义来编写程序的系统，同样也是使用程序计算过程中的函数来推理<!--？-->。Lean也有一套机制使得它可以进行它自己的<strong>元编程</strong>，也就是说可以使用Lean扩展它自己的功能，实施自动化。<a target="_blank" rel="noopener" href="https://leanprover.github.io/programming_in_lean">在Lean中编程</a>则是另一套与本书配套的教程，在那里会有对元编程更详细的说明，虽然这个系统中一部分计算方面的内容在本书中也会出现。</p>
 <h2><a href="#guan-yu-lean" class="header-anchor">#</a><span id="guan-yu-lean">关于Lean</span></h2>
-<p>Lean计划最早由Leonardo de Moura于2013年在Microsoft Research Redmond发起。这是个长程的、进行中的企划，而且其自动化的潜能只能慢慢地被大家所理解。Lean是在Apache 2.0开源协议下发布的。也就是说，它允许其他人自由地使用和拓展Lean的源码以及数学库。</p>
+<p>Lean计划最早由Leonardo de Moura于2013年在Microsoft Research
+Redmond发起。这是个长程的、进行中的企划，而且其自动化的潜能只能慢慢地被大家所理解。Lean是在Apache
+2.0开源协议下发布的。也就是说，它允许其他人自由地使用和拓展Lean的源码以及数学库。</p>
 <p>目前，使用Lean有两种方式。第一种是使用Lean在线编辑器。在使用它的时候，你的浏览器会自动下载一个Javascript版本的Lean，一个包含定义和定理的标准库，以及一个编辑器。这提供了一个方便的快速上手的机会。</p>
-<p>第二个方式则是将Lean安装到你的电脑上运行。这比在线版要快上许多，而且也更灵活。Visual Studio Code（简称VS Code）和Emacs里的特殊模式为书写和调试证明提供了强有力的帮助，也就更适合严肃的用途。Lean的源码和安装指南可以从<a target="_blank" rel="noopener" href="https://github.com/leanprover/lean/">这里</a>获取。</p>
-<p>本教程描述的是当前版本的Lean，也就是Lean 3。一个老版本Lean 2，对同伦类型论（HoTT）有着特殊支持。在<a target="_blank" rel="noopener" href="https://github.com/leanprover/lean2/">这里</a>你可以找到Lean 2和HoTT库。Lean 2的教程则在<a target="_blank" rel="noopener" href="https://leanprover.github.io/tutorial/">这里</a>。</p>
-<span id="more"></span>
-<h2><a href="#guan-yu-ben-shu" class="header-anchor">#</a><span id="guan-yu-ben-shu">关于本书</span></h2>
-<p>本书的目标是教你如何使用Lean来书写和验证证明。本书很多的背景知识都不止局限于Lean。我们会从解释Lean所基于的逻辑系统开始。这是一种版本的<strong>依赖类型论</strong>，它强大到足够以自然的方式证明几乎所有传统的数学定理。特别地，Lean是基于一个包含<strong>递归类型</strong><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>的<strong>Calculus of Constructions</strong><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>系统。我们不止会讲解在依赖类型论中如何定义数学对象和描述数学表达式，也会讲解如何作为一种语言来使用它书写证明。</p>
+<p>第二个方式则是将Lean安装到你的电脑上运行。这比在线版要快上许多，而且也更灵活。Visual
+Studio Code（简称VS
+Code）和Emacs里的特殊模式为书写和调试证明提供了强有力的帮助，也就更适合严肃的用途。Lean的源码和安装指南可以从<a target="_blank" rel="noopener" href="https://github.com/leanprover/lean/">这里</a>获取。</p>
+<p>本教程描述的是当前版本的Lean，也就是Lean 3。一个老版本Lean
+2，对同伦类型论（HoTT）有着特殊支持。在<a target="_blank" rel="noopener" href="https://github.com/leanprover/lean2/">这里</a>你可以找到Lean
+2和HoTT库。Lean 2的教程则在<a target="_blank" rel="noopener" href="https://leanprover.github.io/tutorial/">这里</a>。 <span id="more"></span>
+## 关于本书</p>
+<p>本书的目标是教你如何使用Lean来书写和验证证明。本书很多的背景知识都不止局限于Lean。我们会从解释Lean所基于的逻辑系统开始。这是一种版本的<strong>依赖类型论</strong>，它强大到足够以自然的方式证明几乎所有传统的数学定理。特别地，Lean是基于一个包含<strong>递归类型</strong><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>的<strong>Calculus of
+Constructions</strong><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>系统。我们不止会讲解在依赖类型论中如何定义数学对象和描述数学表达式，也会讲解如何作为一种语言来使用它书写证明。</p>
 <p>由于详细的公理化证明过于复杂，定理证明的一大挑战则是如何让计算机填补尽可能多的细节。我们会讲解一些方法来支持这一点。例如，我们会讨论项的重写，以及Lean用来自动简化项和表达式的方法。类似地，我们也会讨论<strong>细化</strong><!--？-->与<strong>类型推导</strong>的方法。它们可以用来支持许多自由形式的代数推导。</p>
 <p>最后，当然，我们也会讨论Lean特有的特性，包括你与系统之间交流所使用的语言，以及Lean提供的用以管理复杂理论和数据的机制。</p>
 <p>环顾上下文，你会发现诸如下面这样的代码示例：</p>
@@ -310,14 +356,20 @@
 <p><a target="_blank" rel="noopener" href="https://leanprover-community.github.io/lean-web-editor/#code=--%20BEGIN%0Atheorem%20and_commutative%20(p%20q%20%3A%20Prop)%20%3A%20p%20%E2%88%A7%20q%20%E2%86%92%20q%20%E2%88%A7%20p%20%3A%3D%0Aassume%20hpq%20%3A%20p%20%E2%88%A7%20q%2C%0Ahave%20hp%20%3A%20p%2C%20from%20and.left%20hpq%2C%0Ahave%20hq%20%3A%20q%2C%20from%20and.right%20hpq%2C%0Ashow%20q%20%E2%88%A7%20p%2C%20from%20and.intro%20hq%20hp%0A--%20END">试试！</a></p>
 <p>如果你是在线阅读本书，你会发现一个按钮写着“试试！”。按下这个按钮会跳转到一个Lean的在线编辑器，并且会将这段代码复制过去，以及添加一些上下文以使得它可以正确编译。你可以在编辑器中书写一些东西，修改例子的内容，Lean则会在你的书写过程中检查你的结果并持续的反馈给你意见。我们推荐你在阅读本书的过程中，运行每一段示例，对代码进行一些自己的实验。</p>
 <h2><a href="#ming-xie" class="header-anchor">#</a><span id="ming-xie">鸣谢</span></h2>
-<p>这个教程是在Github上维护的一个开源项目。许多人都对此项目做出了贡献、提供了纠错、建议、示例，或是文本。我们感谢Ulrik Buchholz, Kevin Buzzard, Mario Carneiro, Nathan Carter, Eduardo Cavazos, Amine Chaieb, Joe Corneli, William DeMeo, Marcus Klaas de Vries, Ben Dyer, Gabriel Ebner, Anthony Hart, Simon Hudon, Sean Leather, Assia Mahboubi, Gihan Marasingha, Patrick Massot, Christopher John Mazey, Sebastian Ullrich, Floris van Doorn, Daniel Velleman, 和Théo Zimmerman的贡献，并对那些在不经意间漏掉名字的人们表示歉意。</p>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>Peter Dybjer. Inductive families. Formal Asp. Comput., 6(4):440–465, 1994. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p>Thierry Coquand and Gerard Huet. The calculus of constructions. Inf. Comput., 76(2-3):95–120, February 1988. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
-</li>
+<p>这个教程是在Github上维护的一个开源项目。许多人都对此项目做出了贡献、提供了纠错、建议、示例，或是文本。我们感谢Ulrik
+Buchholz, Kevin Buzzard, Mario Carneiro, Nathan Carter, Eduardo Cavazos,
+Amine Chaieb, Joe Corneli, William DeMeo, Marcus Klaas de Vries, Ben
+Dyer, Gabriel Ebner, Anthony Hart, Simon Hudon, Sean Leather, Assia
+Mahboubi, Gihan Marasingha, Patrick Massot, Christopher John Mazey,
+Sebastian Ullrich, Floris van Doorn, Daniel Velleman, 和Théo
+Zimmerman的贡献，并对那些在不经意间漏掉名字的人们表示歉意。</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Peter Dybjer. Inductive families. Formal Asp. Comput.,
+6(4):440–465, 1994.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Thierry Coquand and Gerard Huet. The calculus of
+constructions. Inf. Comput., 76(2-3):95–120, February 1988.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 <link rel="stylesheet" href="/blog/css/spoiler.css" type="text/css"><script src="/blog/js/spoiler.js" type="text/javascript" async></script>
@@ -368,10 +420,10 @@
   </div>
   <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<!--<script src="/blog/js/app.js?v=1648211533684"></script>-->
+<!--<script src="/blog/js/app.js?v=1665927895062"></script>-->
 
 
-    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
@@ -381,22 +433,6 @@
 
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 </html>
