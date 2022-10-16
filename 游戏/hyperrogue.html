@@ -15,25 +15,25 @@
   <meta name="description" content="前段时间在        小石   同学的安利下玩了一款叫HyperRogue的游戏，这是一个在双曲平面上的roguelike，著名的一个非欧几何——罗巴切夫斯基几何。于是想介绍一下罗氏几何，与推荐一下这款游戏，能更直观的体验非欧几何的魅力。 本文主要数学内容来自【俄】诺尔金的《罗巴切夫斯基几何学初步》1。       欧几里得几何学  V. 平行公理  罗氏几何的简要推论">
 <meta property="og:type" content="article">
 <meta property="og:title" content="罗氏几何简介与游戏HyperRogue推荐">
-<meta property="og:url" content="https://shedarshian.github.io/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue.html">
+<meta property="og:url" content="https://shedarshian.github.io/blog/%E6%B8%B8%E6%88%8F/hyperrogue.html">
 <meta property="og:site_name" content="石尾台聖の記憶空間">
 <meta property="og:description" content="前段时间在        小石   同学的安利下玩了一款叫HyperRogue的游戏，这是一个在双曲平面上的roguelike，著名的一个非欧几何——罗巴切夫斯基几何。于是想介绍一下罗氏几何，与推荐一下这款游戏，能更直观的体验非欧几何的魅力。 本文主要数学内容来自【俄】诺尔金的《罗巴切夫斯基几何学初步》1。       欧几里得几何学  V. 平行公理  罗氏几何的简要推论">
 <meta property="og:locale">
-<meta property="og:image" content="https://shedarshian.github.io/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue/crossroad2.png">
-<meta property="og:image" content="https://shedarshian.github.io/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue/parallel.png">
-<meta property="og:image" content="https://shedarshian.github.io/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue/parallel_angle.png">
-<meta property="og:image" content="https://shedarshian.github.io/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue/angle.png">
-<meta property="og:image" content="https://shedarshian.github.io/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue/degenerate-gon.png">
-<meta property="og:image" content="https://shedarshian.github.io/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue/lands.png">
-<meta property="og:image" content="https://shedarshian.github.io/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue/ivory.png">
-<meta property="og:image" content="https://shedarshian.github.io/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue/disk.png">
-<meta property="og:image" content="https://shedarshian.github.io/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue/crossroad.png">
-<meta property="og:image" content="https://shedarshian.github.io/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue/klein.png">
-<meta property="og:image" content="https://shedarshian.github.io/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue/half_plane.png">
-<meta property="og:image" content="https://shedarshian.github.io/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue/curvature.png">
-<meta property="og:image" content="https://shedarshian.github.io/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue/circles.png">
-<meta property="og:image" content="https://shedarshian.github.io/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue/running_dog.png">
-<meta property="og:image" content="https://shedarshian.github.io/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue/cthulhu.png">
+<meta property="og:image" content="https://shedarshian.github.io/blog/%E6%B8%B8%E6%88%8F/hyperrogue/crossroad2.png">
+<meta property="og:image" content="https://shedarshian.github.io/blog/%E6%B8%B8%E6%88%8F/hyperrogue/parallel.png">
+<meta property="og:image" content="https://shedarshian.github.io/blog/%E6%B8%B8%E6%88%8F/hyperrogue/parallel_angle.png">
+<meta property="og:image" content="https://shedarshian.github.io/blog/%E6%B8%B8%E6%88%8F/hyperrogue/angle.png">
+<meta property="og:image" content="https://shedarshian.github.io/blog/%E6%B8%B8%E6%88%8F/hyperrogue/degenerate-gon.png">
+<meta property="og:image" content="https://shedarshian.github.io/blog/%E6%B8%B8%E6%88%8F/hyperrogue/lands.png">
+<meta property="og:image" content="https://shedarshian.github.io/blog/%E6%B8%B8%E6%88%8F/hyperrogue/ivory.png">
+<meta property="og:image" content="https://shedarshian.github.io/blog/%E6%B8%B8%E6%88%8F/hyperrogue/disk.png">
+<meta property="og:image" content="https://shedarshian.github.io/blog/%E6%B8%B8%E6%88%8F/hyperrogue/crossroad.png">
+<meta property="og:image" content="https://shedarshian.github.io/blog/%E6%B8%B8%E6%88%8F/hyperrogue/klein.png">
+<meta property="og:image" content="https://shedarshian.github.io/blog/%E6%B8%B8%E6%88%8F/hyperrogue/half_plane.png">
+<meta property="og:image" content="https://shedarshian.github.io/blog/%E6%B8%B8%E6%88%8F/hyperrogue/curvature.png">
+<meta property="og:image" content="https://shedarshian.github.io/blog/%E6%B8%B8%E6%88%8F/hyperrogue/circles.png">
+<meta property="og:image" content="https://shedarshian.github.io/blog/%E6%B8%B8%E6%88%8F/hyperrogue/running_dog.png">
+<meta property="og:image" content="https://shedarshian.github.io/blog/%E6%B8%B8%E6%88%8F/hyperrogue/cthulhu.png">
 <meta property="article:published_time" content="2019-10-15T02:20:11.000Z">
 <meta property="article:modified_time" content="2019-10-15T06:21:56.726Z">
 <meta property="article:author" content="小大圣">
@@ -42,12 +42,12 @@
 <meta property="article:tag" content="非欧几何">
 <meta property="article:tag" content="HyperRogue">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://shedarshian.github.io/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue/crossroad2.png">
+<meta name="twitter:image" content="https://shedarshian.github.io/blog/%E6%B8%B8%E6%88%8F/hyperrogue/crossroad2.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1460233_cqpdeugxv8i.css">
   
-  <!--<link rel="stylesheet" href="/blog/css/style.css?v=1665927895094">-->
+  <!--<link rel="stylesheet" href="/blog/css/style.css?v=1665928417400">-->
 
   
 <!-- hexo injector head_end start -->
@@ -327,7 +327,7 @@ p.spoiler {
     <span class="spoiler-blur ">小石</span>
   </span>同学的安利下玩了一款叫HyperRogue的游戏，这是一个在双曲平面上的roguelike，著名的一个非欧几何——罗巴切夫斯基几何。于是想介绍一下罗氏几何，与推荐一下这款游戏，能更直观的体验非欧几何的魅力。
 本文主要数学内容来自【俄】诺尔金的《罗巴切夫斯基几何学初步》<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>。</p>
-<img src="/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue/crossroad2.png" class>
+<img src="/blog/%E6%B8%B8%E6%88%8F/hyperrogue/crossroad2.png" class>
 <div class="tocStart">
 
 </div>
@@ -428,55 +428,55 @@ V的所有公理。</p></li>
 <p>通过直线外一点，在平面上至少能做两条直线，与已知直线不相交。</p>
 </blockquote>
 <p>如图，考虑直线C'C和直线外一点A，从A做垂线AB（线段AB称为A对于直线CC'的<strong>指针</strong>），在AB的右侧考虑所有从A出发的射线。有些射线和BC相交（如AD，AE），有些和它不相交（如AS），从AB开始逆时针旋转，找到第一条和BC不相交的射线比如AP，我们称之为射线AP与BC平行（一定有这样的一条直线的证明略）。同样，左侧也能找到一样的一条平行射线AP'。自然会有一个问题，这两个射线是不是属于同一条直线。如果认为属于同一条直线，就相当于认为角BAP是直角（角BAP称为点A对于直线CC'的<strong>平行角</strong>），就回到了欧几里得的平行公理，这是我们不希望的。也就是说，在罗氏几何里，这两条射线所在的直线之间，还会有别的直线，它们与已知直线<strong>既不平行也不相交</strong>，我们称为<strong>超平行</strong>，比如图里的AR。</p>
-<img src="/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue/parallel.png" class>
+<img src="/blog/%E6%B8%B8%E6%88%8F/hyperrogue/parallel.png" class>
 <h2><a href="#luo-shi-ji-he-li-de-zhi-xian-guan-xi" class="header-anchor">#</a><span id="luo-shi-ji-he-li-de-zhi-xian-guan-xi">罗氏几何里的直线关系</span></h2>
 <p>可以证明这样的定理，平行角随着指针的递增而递减，并且任意的锐角，都可以找到一个指针使得该角作为其平行角。这个图可以让我们先对罗氏几何有一个初步的感受，这里就开始和我们常见的欧几里得几何有一些不同了：</p>
-<img src="/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue/parallel_angle.png" class>
+<img src="/blog/%E6%B8%B8%E6%88%8F/hyperrogue/parallel_angle.png" class>
 <p>在A点上移的过程，A点右端与CC'平行的射线上移的慢。我们再进一步向前推，给定一条已知直线，和一条与已知直线不平行也不垂直的斜线，一定能找到已知直线的一条垂线，使它与斜线平行：实际上就是上图，从A''P''开始，保持直线平行并向下移动，总可以移动到BC这样一条垂线。事实上，对于任何的角，都可以在角内部做出一条与角的两条边都平行的直线。方法是：做角平分线，然后在角平分线上找一条垂线使其与角的边平行。</p>
-<img src="/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue/angle.png" class>
+<img src="/blog/%E6%B8%B8%E6%88%8F/hyperrogue/angle.png" class>
 <p>我们甚至可以做出一组由直线组成的图形，叫做退化多边形，其中的直线两两平行：</p>
-<img src="/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue/degenerate-gon.png" class>
+<img src="/blog/%E6%B8%B8%E6%88%8F/hyperrogue/degenerate-gon.png" class>
 <p>可以理解为多边形在其中的点趋于无穷远下的极限。平行之外，还有超平行。最简单的做出超平行直线的方法就是在上一节的第一张图里，过A做出指针AB的垂线，也就是垂直于直线AB的两条直线超平行。相反，超平行的两条直线也可做且仅可做一条公垂线。</p>
 <p>我们看到，已经有些直线在画图的时候被扭曲成了曲线的形状。这也是没有办法的，毕竟我们所在的空间不是罗氏空间嘛。那么，想更好的表示罗氏几何的性质，最好的办法就是将其一一对应到欧几里得平面上的物体，也就是下下一章的模型。</p>
 <h1><a href="#hyperrogue-you-xi-de-jian-dan-wan-fa-jie-shao" class="header-anchor">#</a><span id="hyperrogue-you-xi-de-jian-dan-wan-fa-jie-shao">HyperRogue游戏的简单玩法介绍</span></h1>
 <p>想了想，好像没有很好的位置介绍游戏的基本玩法了，就放在这里好了。HyperRogue顾名思义，是一个Roguelike游戏。游戏大致是回合制，玩家动一步怪物动一步，主要目标是收集宝石也就是分数。游戏有很多种大陆，每一个大陆都有一个独特的机制，比如像扫雷一样的Minefield，吃到镜子碎片可以产生分身的Hall
 of
 mirrors，带领不同颜色的虫子相互战争的Hive等等。每个大陆也有自己的宝石类型，收集的宝石越多这个大陆的怪物也会刷出的越多。在收集到30个以及60个宝石后会解锁一些大陆，有的大陆还有自己特殊的要求，比如地狱需要9个不同的大陆每个大陆至少10个宝石。<a target="_blank" rel="noopener" href="http://roguetemple.com/z/hyper/gallery.php">这里</a>可以看到一个简单的简介。</p>
-<img src="/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue/lands.png" class>
+<img src="/blog/%E6%B8%B8%E6%88%8F/hyperrogue/lands.png" class>
 <p>游戏很大程度上基于这样一个（同样行文里没有很好的位置叙述的）事实：罗氏几何里的圆的面积几乎是半径的指数函数。对比欧几里得几何，也就是我们日常生活的几何，它的圆的面积只是半径的平方。也就是说，这个大陆比我们日常生活的几何，大得多得多。比如说，这个Ivory
 land，实际上占了整个无限大的上半平面：</p>
-<img src="/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue/ivory.png" class>
+<img src="/blog/%E6%B8%B8%E6%88%8F/hyperrogue/ivory.png" class>
 <p>如果在欧几里得几何里，一个平面被占掉一半之后，就只有一个半平面了（是一个/半平面，不是一个半/平面！），顶多能再划分出一条有限宽的带。但是罗氏几何不一样。上面说过的那个退化多边形就是一个例子。用直线分掉一个半平面之后，还有很多很多的半平面。这也说明了这个游戏无限的可能性（笑）</p>
 <h1><a href="#mo-xing-yu-qu-xian" class="header-anchor">#</a><span id="mo-xing-yu-qu-xian">模型与曲线</span></h1>
 <p>所谓罗氏几何的模型，就是在欧几里得几何里表现出罗氏几何的点线等元素，但是并不一定仍然保持是直线，或者并不一定保持角度的大小不变，因为扭曲是一定存在的。最常见的模型，也是HyperRogue里使用的模型，就是笛卡尔盘模型（Poincare
 disk model）。</p>
 <h2><a href="#di-qia-er-pan-mo-xing" class="header-anchor">#</a><span id="di-qia-er-pan-mo-xing">笛卡尔盘模型</span></h2>
 <p>笛卡尔盘模型以欧几里得平面上的一个圆为基础，将圆的内部的点等价到罗氏几何的点。注意只有圆的内部的点才有意义，圆的边界上的点被认为是无穷远处的理想点。双曲直线（涉及不同几何的交叉的时候，以后会将罗氏几何里的直线称为双曲直线，将罗氏几何的平面称为双曲平面）则被对应到大圆的<strong>直径或与大圆正交的小圆</strong>（所谓正交，就是两圆在交点处的切线相互垂直）。平行的双曲直线表示为相交于大圆上点的两圆/直线，而超平行的则是不相交的。如图，abc都是双曲直线，b与c平行，与a超平行，a与c相交。读者可以尝试验证一下上面的公理与每条定理的正确性。</p>
-<img src="/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue/disk.png" class>
+<img src="/blog/%E6%B8%B8%E6%88%8F/hyperrogue/disk.png" class>
 <p>双曲直线的垂直仍然是两圆/直线在交点处垂直。事实上，笛卡尔盘模型是保角的，也就是它保持原罗氏几何里的角度不被扭曲，我们看到的图景至少在近处仍是接近真实的。</p>
-<img src="/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue/crossroad.png" class>
+<img src="/blog/%E6%B8%B8%E6%88%8F/hyperrogue/crossroad.png" class>
 <h2><a href="#qi-ta-mo-xing" class="header-anchor">#</a><span id="qi-ta-mo-xing">其他模型</span></h2>
 <p>当然还有其他的很多模型。Klein的圆盘模型不是保角的，形状会被扭曲，但是它将直线对应到直线，也是一个不错的模型。</p>
-<img src="/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue/klein.png" class>
+<img src="/blog/%E6%B8%B8%E6%88%8F/hyperrogue/klein.png" class>
 <p>半平面模型是一个在学习中广泛应用的模型，也是保角的，使用了整个上半平面作为映射，是笛卡尔盘模型的一个反演。</p>
-<img src="/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue/half_plane.png" class>
+<img src="/blog/%E6%B8%B8%E6%88%8F/hyperrogue/half_plane.png" class>
 <p>点击<a target="_blank" rel="noopener" href="http://roguetemple.com/z/hyper/models.php">这里</a>可以看到更多的在游戏中使用的模型。</p>
 <h2><a href="#qu-lu-ban-jing" class="header-anchor">#</a><span id="qu-lu-ban-jing">曲率半径</span></h2>
 <p>我们接下来讲一些更加与欧几里得几何不一样的特性。首先，在微分几何里，一个曲面是弯的还是平的的重要特征是，其上的一个方向向量，在沿着一个闭曲线平移一周之后，回来的方向与初始的方向不同。这就是曲率的体现。在游戏里则表现为，你绕了一个圈回来之后，整个视角的方向会旋转。双曲平面作为一个负常曲率空间，在这上面绕一圈之后，角度旋转的方向和绕的圈所包围的面积成正比。</p>
 <p>在游戏中，有这样一个大陆Burial
 ground，这个大陆里的武器只有一个一直指向固定方向的剑，你需要靠上面所述的性质，绕圈来改变剑的方向才能击杀敌人。</p>
-<img src="/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue/curvature.png" class>
+<img src="/blog/%E6%B8%B8%E6%88%8F/hyperrogue/curvature.png" class>
 <p>事实上，罗氏几何的多边形外角和大于<span class="math inline">\(2\pi\)</span>（与欧几里得几何的严格等于<span class="math inline">\(2\pi\)</span>不同），与上面说的曲率类似，外角和与<span class="math inline">\(2\pi\)</span>的差值也和多边形的面积成正比。这也造成了罗氏几何里的一个特殊的情况：可以用角角角来判定三角形全等！</p>
 <h2><a href="#you-zhao-chong-yao-di-wei-de-qu-xian-yuan-deng-ju-yuan-yu-ji-xian-yuan" class="header-anchor">#</a><span id="you-zhao-chong-yao-di-wei-de-qu-xian-yuan-deng-ju-yuan-yu-ji-xian-yuan">有着重要地位的曲线——圆、等距圆与极限圆</span></h2>
 <p>欧几里得几何里的圆有着特殊的地位。在罗氏几何里，有这样几种重要的曲线：圆、等距圆和极限圆。圆与欧几里得几何里的圆类似，定义为到一点距离相等的点的曲线，在笛卡尔盘模型里同样也是一个圆，但是其圆心可能会和欧几里得几何里的圆心完全不一样。由于两条平行线之间的距离不再是一直相等，可以做出这样的曲线叫等距圆，或者叫超圆（Hypercycle），是到一条直线距离相等的曲线。等距圆在笛卡尔盘模型里是一条不与边界圆垂直的圆弧。</p>
-<img src="/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue/circles.png" class>
+<img src="/blog/%E6%B8%B8%E6%88%8F/hyperrogue/circles.png" class>
 <p>在游戏里有这样一个大陆Land of eternal
 motion，这个大陆的陆地踩一下就会掉下去，你只能无限的往前走，也没有多余的回合去打怪物。但是即使是沿着直线向前走，也可以甩掉跟在自己侧后方的怪物，因为怪物实际上走的曲线是等距圆，而不是会和你分散的直线。在欧几里得几何里，跟在你后方的怪物你是永远也甩不掉的。</p>
-<img src="/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue/running_dog.png" class>
+<img src="/blog/%E6%B8%B8%E6%88%8F/hyperrogue/running_dog.png" class>
 <p>极限圆，或者叫浑圆（holocycle）定义为一组平行线组成的线束上的对应点的曲线，或者说垂直于这组平行线束的曲线。极限圆可以理解为圆在圆心趋向无穷远下的极限。极限圆在笛卡尔盘模型里是一个与边界圆内切的圆形。在游戏里，R'Lyeh里会有一个大陆Temple
 of
 Cthulhu（克苏鲁神殿），这个大陆是由无限嵌套的等距圆组成的，在每一层神殿里你只能拿一个宝石，想要获取更多的宝石就只能向神殿的无限深处前进。</p>
-<img src="/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue/cthulhu.png" class>
+<img src="/blog/%E6%B8%B8%E6%88%8F/hyperrogue/cthulhu.png" class>
 <p>过任何三点，能做且只能做直线、圆、等距圆、极限圆中的一者。</p>
 <h1><a href="#luo-shi-ji-he-yu-ou-shi-ji-he-de-xiang-rong-xing-yi-ji-qi-hou-shi-ying-xiang" class="header-anchor">#</a><span id="luo-shi-ji-he-yu-ou-shi-ji-he-de-xiang-rong-xing-yi-ji-qi-hou-shi-ying-xiang">罗氏几何与欧氏几何的相容性，以及其后世影响</span></h1>
 <p>最后一节，让我们以罗巴切夫斯基的精妙工作结束：他证明了罗氏几何与欧氏几何的相容性。在前面并没有叙述到的罗氏空间几何里，有一个曲面叫<strong>极限球</strong>，它与上面说的极限圆很类似。极限球与平面的交线是该平面上的一个极限圆。在极限球面上同样可以建立一个曲面几何学，将极限圆认作曲面上的直线后，配合一些概念的定义，它满足前面所述的I至IV的所有公理。但是！极限球上的极限圆同样可以建立平行理论。罗巴切夫斯基发现，在极限球上，过“直线”（也就是极限圆）外一点，<strong>有且只有一条</strong>“直线”与其不相交。也就是说在罗氏几何里，罗巴切夫斯基发现了一套欧几里得几何的系统。这也就说明了，如果欧几里得几何的公理之间有矛盾，那么罗巴切夫斯基几何也有。
@@ -515,7 +515,7 @@ Cthulhu（克苏鲁神殿），这个大陆是由无限嵌套的等距圆组成�
       
   <div class="nexmoe-post-copyright">
     <strong>Author：</strong>小大圣<br>
-    <strong>Link：</strong><a href="https://shedarshian.github.io/blog/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/hyperrogue.html" title="https:&#x2F;&#x2F;shedarshian.github.io&#x2F;blog&#x2F;%E6%95%B0%E5%AD%A6&#x2F;%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6&#x2F;hyperrogue.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;shedarshian.github.io&#x2F;blog&#x2F;%E6%95%B0%E5%AD%A6&#x2F;%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6&#x2F;hyperrogue.html</a><br>
+    <strong>Link：</strong><a href="https://shedarshian.github.io/blog/%E6%B8%B8%E6%88%8F/hyperrogue.html" title="https:&#x2F;&#x2F;shedarshian.github.io&#x2F;blog&#x2F;%E6%B8%B8%E6%88%8F&#x2F;hyperrogue.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;shedarshian.github.io&#x2F;blog&#x2F;%E6%B8%B8%E6%88%8F&#x2F;hyperrogue.html</a><br>
     
       <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
     
@@ -546,7 +546,7 @@ Cthulhu（克苏鲁神殿），这个大陆是由无限嵌套的等距圆组成�
   </div>
   <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<!--<script src="/blog/js/app.js?v=1665927895095"></script>-->
+<!--<script src="/blog/js/app.js?v=1665928417402"></script>-->
 
 
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
