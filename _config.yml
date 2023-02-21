@@ -144,7 +144,7 @@ markdown:
     - markdown-it-sup
 
 mathjax:
-  tags: ams # or 'ams' or 'all'
+  tags: all # or 'ams' or 'all'
   single_dollars: true # enable single dollar signs as in-line math delimiters
   cjk_width: 0.9 # relative CJK char width
   normal_width: 0.6 # relative normal (monospace) width
