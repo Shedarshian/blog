@@ -4,7 +4,7 @@
 
 <head>
   
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><title>Archive - 石尾台聖の記憶空間</title>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><title>粒子物理讲义-第五章 - 石尾台聖の記憶空間</title>
   <meta charset="UTF-8">
   <meta name="description" content="石尾台圣的记忆空间">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -12,20 +12,25 @@
   
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
-  <meta name="description" content="石尾台圣的记忆空间">
-<meta property="og:type" content="website">
-<meta property="og:title" content="石尾台聖の記憶空間">
-<meta property="og:url" content="https://shedarshian.github.io/blog/archives/page/3/index.html">
+  <meta name="description" content="第五章 对称性与守恒律      5.1 连续对称性与守恒律      对称性在物理研究中十分重要。例如如果我们看到这样一个函数图像：  我们即使不知道它的函数表达式，但是只要知道它是奇函数，就能立即得到一系列性质，例如它在任意  区间内的积分都为0，它的泰勒展开中偶数次幂的系数都为0等等。在物理中，如果让我们求一个无限长直并且均匀带电的导线周围空间内的电场：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="粒子物理讲义-第五章">
+<meta property="og:url" content="https://shedarshian.github.io/blog/%E7%B2%92%E5%AD%90%E7%89%A9%E7%90%86/particle5.html">
 <meta property="og:site_name" content="石尾台聖の記憶空間">
-<meta property="og:description" content="石尾台圣的记忆空间">
+<meta property="og:description" content="第五章 对称性与守恒律      5.1 连续对称性与守恒律      对称性在物理研究中十分重要。例如如果我们看到这样一个函数图像：  我们即使不知道它的函数表达式，但是只要知道它是奇函数，就能立即得到一系列性质，例如它在任意  区间内的积分都为0，它的泰勒展开中偶数次幂的系数都为0等等。在物理中，如果让我们求一个无限长直并且均匀带电的导线周围空间内的电场：">
 <meta property="og:locale">
+<meta property="og:image" content="https://shedarshian.github.io/blog/%E7%B2%92%E5%AD%90%E7%89%A9%E7%90%86/particle5/odd-function.png">
+<meta property="og:image" content="https://shedarshian.github.io/blog/%E7%B2%92%E5%AD%90%E7%89%A9%E7%90%86/particle5/Efield.png">
+<meta property="article:published_time" content="2024-03-31T08:25:21.000Z">
+<meta property="article:modified_time" content="2024-03-31T08:32:28.781Z">
 <meta property="article:author" content="小大圣">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://shedarshian.github.io/blog/%E7%B2%92%E5%AD%90%E7%89%A9%E7%90%86/particle5/odd-function.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1460233_cqpdeugxv8i.css">
   
-  <!--<link rel="stylesheet" href="/blog/css/style.css?v=1712034277450">-->
+  <!--<link rel="stylesheet" href="/blog/css/style.css?v=1712034277259">-->
 
   
 <!-- hexo injector head_end start -->
@@ -60,7 +65,119 @@ p.spoiler {
   color: black;
   background-color: black;
   text-shadow: none;
-}</style><meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+}</style><meta name="generator" content="Hexo 5.4.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body class="mdui-drawer-body-left">
   
@@ -302,96 +419,98 @@ p.spoiler {
   </div>
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
-        
-<section class="nexmoe-archives">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: NaN%;"> 
+          <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="粒子物理讲义-第五章" class="lazyload">
+          <h1>粒子物理讲义-第五章</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2024年03月31日</a>
+    <a><i class="nexmoefont icon-areachart"></i>602 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
+</div>
 
-    <article>
-        
+  <div class="nexmoe-post-right">
+    
+  </div>
 
-        
-            <h2>2020</h2>
-            <ul>
-            
-                <li><span>02-15</span><a href="/blog/%E7%89%A9%E7%90%86/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/gauge4.html" >规范场论学习笔记4—强子的电弱相互作用</a></li>
-            
-                <li><span>01-14</span><a href="/blog/%E5%8A%A8%E7%94%BB/aim_boson.html" >RuR实验上AIM玻色子与夸克的一个新时轴束缚态的发现</a></li>
-            
-                <li><span>01-11</span><a href="/blog/%E9%9A%8F%E7%AC%94/%E5%8A%A8%E7%94%BB/dairy-violet.html" >随笔-紫罗兰永恒花园外传</a></li>
-            
-            </ul>
-        
-            <h2>2019</h2>
-            <ul>
-            
-                <li><span>12-11</span><a href="/blog/%E7%89%A9%E7%90%86/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/gauge3.html" >规范场论学习笔记3—电弱统一中的希格斯机制</a></li>
-            
-                <li><span>11-25</span><a href="/blog/%E7%89%A9%E7%90%86/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/gauge2.html" >规范场论学习笔记2—自发对称性破缺</a></li>
-            
-                <li><span>11-23</span><a href="/blog/%E9%9A%8F%E7%AC%94/dairy-frozen.html" >随笔-冰雪奇缘2</a></li>
-            
-                <li><span>11-18</span><a href="/blog/%E7%89%A9%E7%90%86/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/gauge1.html" >规范场论学习笔记1—规范不变性</a></li>
-            
-                <li><span>11-14</span><a href="/blog/live/repo/Lisani-repo.html" >Lisani北京repo</a></li>
-            
-                <li><span>10-15</span><a href="/blog/uncategorized/link.html" >常用链接</a></li>
-            
-                <li><span>10-15</span><a href="/blog/%E6%B8%B8%E6%88%8F/hyperrogue.html" >罗氏几何简介与游戏HyperRogue推荐</a></li>
-            
-            </ul>
-        
-    </article>
+  <article>
+    <link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.2.1/css/hint.min.css"><h1><a href="#di-wu-zhang-dui-cheng-xing-yu-shou-heng-lu" class="header-anchor">#</a><span id="di-wu-zhang-dui-cheng-xing-yu-shou-heng-lu">第五章 对称性与守恒律</span></h1>
+<div class="tocStart">
+
+</div>
+<!-- toc -->
+<ul>
+<li><a href="#5-1-lian-xu-dui-cheng-xing-yu-shou-heng-lu">5.1
+连续对称性与守恒律</a></li>
+</ul>
+<!-- tocstop -->
+<div class="tocEnd">
+
+</div>
+<p>对称性在物理研究中十分重要。例如如果我们看到这样一个函数图像：</p>
+<img src="/blog/%E7%B2%92%E5%AD%90%E7%89%A9%E7%90%86/particle5/odd-function.png" class>
+<p>我们即使不知道它的函数表达式，但是只要知道它是奇函数，就能立即得到一系列性质，例如它在任意
+<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="6.418ex" height="2.262ex" role="img" focusable="false" viewbox="0 -750 2836.7 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="5B" d="M118 -250V750H255V710H158V-210H255V-250H118Z"/></g><g data-mml-node="mo" transform="translate(278,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"/></g><g data-mml-node="mi" transform="translate(1056,0)"><path data-c="1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"/></g><g data-mml-node="mo" transform="translate(1585,0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"/></g><g data-mml-node="mi" transform="translate(2029.7,0)"><path data-c="1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"/></g><g data-mml-node="mo" transform="translate(2558.7,0)"><path data-c="5D" d="M22 710V750H159V-250H22V-210H119V710H22Z"/></g></g></g></svg></mjx-container></span>
+区间内的积分都为0，它的泰勒展开中偶数次幂的系数都为0等等。在物理中，如果让我们求一个无限长直并且均匀带电的导线周围空间内的电场：</p>
+<img src="/blog/%E7%B2%92%E5%AD%90%E7%89%A9%E7%90%86/particle5/Efield.png" class>
+<p>我们就可以首先依据对称性将问题进行简化。例如我们将研究问题在垂直方向上进行反射，空间内电荷分布保持不变，这说明在任意一点没有垂直方向上的电场；如果在水平方向上过导线的任意平面进行反射，同样保持不变，这说明在任意一点没有垂直于轴反向的电场；于是电场强度只能沿轴方向。又由于空间绕导线旋转之后，电荷分布也保持不变，这说明在任意不同的角度电场强度都相等；如果将空间沿垂直方向平移，电荷分布还是保持不变，这说明在不同高度电场强度也相等。我们仅仅通过对空间对称性的分析，就得到了在任意一点的电场方向，以及电场强度只是距离导线的距离
+<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.02ex" height="1.025ex" role="img" focusable="false" viewbox="0 -442 451 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45F" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"/></g></g></g></svg></mjx-container></span>
+的函数这两个重要信息。这足以表明对称性分析在物理中的重要性。</p>
+<p>在粒子物理的领域，同样有着诸多对称性。我们先从空间和时间上的连续对称性来考虑。</p>
+<h2><a href="#5-1-lian-xu-dui-cheng-xing-yu-shou-heng-lu" class="header-anchor">#</a><span id="5-1-lian-xu-dui-cheng-xing-yu-shou-heng-lu">5.1 连续对称性与守恒律</span></h2>
+<p>依据生活经验，我们可以知道，时空有一些连续对称性：空间平移对称性，空间旋转对称性，时间平移对称性。我们有诺特定理：每个连续对称性都有一个对应的守恒律。空间平移对称性生成动量守恒，时间平移对称性生成能量守恒，空间旋转对称性生成角动量守恒。全局的相位变换还可以生成量子数守恒，例如电荷守恒。</p>
+<span id="more"></span>
+<link rel="stylesheet" href="/blog/css/spoiler.css" type="text/css"><script src="/blog/js/spoiler.js" type="text/javascript" async></script>
+  </article>
+
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/blog/categories/%E7%89%A9%E7%90%86/">物理</a><a class="nexmoefont icon-appstore-fill -link" href="/blog/categories/%E7%B2%92%E5%AD%90%E7%89%A9%E7%90%86/">粒子物理</a>
+    
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    
+      
+  <div class="nexmoe-post-copyright">
+    <strong>Author：</strong>小大圣<br>
+    <strong>Link：</strong><a href="https://shedarshian.github.io/blog/%E7%B2%92%E5%AD%90%E7%89%A9%E7%90%86/particle5.html" title="https:&#x2F;&#x2F;shedarshian.github.io&#x2F;blog&#x2F;%E7%B2%92%E5%AD%90%E7%89%A9%E7%90%86&#x2F;particle5.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;shedarshian.github.io&#x2F;blog&#x2F;%E7%B2%92%E5%AD%90%E7%89%A9%E7%90%86&#x2F;particle5.html</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+    
+    <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css">
+<div id="gitalk"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
+<script src="/blog/js/src/md5.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: 'Iv1.d401eaa1fb95895c',
+        clientSecret: 'ef9f6f08a2fb7ca63414802a68c72c70e0f851b8',
+        id: md5(window.location.pathname),
+        repo: 'blog',
+        owner: 'shedarshian',
+        admin: 'shedarshian'
+    })
+    gitalk.render('gitalk')
+</script>
 </section>
-
-<style>
-.nexmoe-archives article > *:first-child {
-    margin-top: 0;
-}
-.nexmoe-archives article > *:last-child {
-    margin-bottom: 0;
-}
-.nexmoe-archives ul {
-    list-style: none;
-    padding-left: 0!important;
-}
-.nexmoe-archives li {
-    position: relative;
-    padding: 10px 0;
-}
-.nexmoe-archives li::before {
-    content: "";
-    width: 14px;
-    height: 14px;
-    background: #ff4e6a;
-    display: inline-block;
-    vertical-align: middle;
-    margin-top: -2px;
-    margin-right: 11px;
-    border-radius: 100%;
-    border: 3px solid #fff;
-    z-index: 100;
-    position: relative;
-}
-.nexmoe-archives li::after {
-    content: "";
-    height: 100%;
-    width: 2px;
-    background: rgba(255, 78, 106, 0.2);
-    position: absolute;
-    left: 6px;
-    top: 20px;
-}
-.nexmoe-archives li:last-child:after {
-    display: none;
-}
-.nexmoe-archives span {
-    margin-right: 15px;
-}
-</style>
+  </div>
+</div>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<!--<script src="/blog/js/app.js?v=1712034277453"></script>-->
+<!--<script src="/blog/js/app.js?v=1712034277264"></script>-->
 
 
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
