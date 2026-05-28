@@ -81,8 +81,8 @@ pagination_dir: page
 plugins:
 #  - hexo-math
  - hexo-filter-mathjax
- - hexo-spoiler # {% spoiler_inline [text] %}
- - hexo-sliding-spoiler # {% spoiler "title" %} {% endspoiler %}
+ - hexo-spoiler # {% spoiler [text] %}
+ - hexo-sliding-spoiler # {% sliding_spoiler "title" %} {% endsliding_spoiler %}
  - hexo-tag-bilibili # {% bilibili [av_id] [page] %}
  - hexo-tag-qrcode # {% qrcode data [alt:text] [title:text] [class] %}
  - hexo-tag-hint # {% hint 'body_text' 'hint_text' %}
