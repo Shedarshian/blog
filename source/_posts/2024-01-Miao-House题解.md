@@ -10,7 +10,7 @@ tags:
 ---
 
 
-[Miao House](https://mh2023.puzzlehunt.cn/puzzle?key=349a9e7d99b80526cd32e42d664d21220acf01de)
+[Miao House](https://mh2023.puzzlehunt.cn/puzzle?key=round1_02)
 
 <!-- more -->
 
