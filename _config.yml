@@ -98,25 +98,25 @@ deploy:
   repo: https://github.com/Shedarshian/blog.git
   branch: master
 
-math:
-  engine: 'mathjax' # or 'katex'
-  every_page: true
-  mathjax:
-    enable: false
-    src: https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js
-    config:
-      # MathJax config
-      tex2jax:
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ]
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        processEscapes: true
-      TeX:
-        equationNumbers:
-          autoNumber: "all"
-        Macros:
-          bm: ["\\boldsymbol{#1}", 1]
-      extensions: ["tex2jax.js", "AMSmath.js", "AMSsymbols.js", "https://cdn.mathjax.org/mathjax/contrib/physics/physics.js"]
-      jax: ["input/TeX", "output/HTML-CSS"]
+# math:
+#   engine: 'mathjax' # or 'katex'
+#   every_page: true
+#   mathjax:
+#     enable: false
+#     src: https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js
+#     config:
+#       # MathJax config
+#       tex2jax:
+#         inlineMath: [ ['$','$'], ["\\(","\\)"] ]
+#         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+#         processEscapes: true
+#       TeX:
+#         equationNumbers:
+#           autoNumber: "all"
+#         Macros:
+#           bm: ["\\boldsymbol{#1}", 1]
+#       extensions: ["tex2jax.js", "AMSmath.js", "AMSsymbols.js", "https://cdn.mathjax.org/mathjax/contrib/physics/physics.js"]
+#       jax: ["input/TeX", "output/HTML-CSS"]
   # katex:
   #   css: custom_css_source
   #   js: custom_js_source # not used
@@ -164,5 +164,6 @@ mathjax:
     # see http://docs.mathjax.org/en/latest/options/input/tex.html#tex-extension-options for more detail
 
 pandoc:
-  pandoc_path: D:/Program Files/Pandoc/pandoc.exe
-
+  pandoc_path: /opt/homebrew/bin/pandoc
+  args:
+    - "--mathjax"
